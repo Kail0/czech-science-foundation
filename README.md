@@ -14,4 +14,4 @@ Gacr.cz source code and issue tracker https://gacr.cz/
 
 ##ChangeLog
 #####0.0.1
-*Intial releases
+* Intial releases
