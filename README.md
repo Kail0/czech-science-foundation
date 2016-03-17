@@ -22,7 +22,7 @@ Wordpress
 ##Screenshots
 
 ##ChangeLog
-#####1.2
+1.2
 *ticker and material design support
-#####1.0
+1.0
 *Intial releases
