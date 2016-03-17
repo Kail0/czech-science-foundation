@@ -16,12 +16,12 @@ This theme is(or will be) heavily influenced by Material Design from Google. I'm
 ##Notes
 
 ##Credits
-[Material Design by Google](https://www.google.com/design/spec/material-design/introduction.html)
-[Materializecss](http://materializecss.com/)
+[Material Design by Google](https://www.google.com/design/spec/material-design/introduction.html)  
+[Materializecss](http://materializecss.com/)  
 Wordpress
 ##Screenshots
 
-##ChangeLog
+##Changelog
 - 1.2
   - Ticker and material design support
 - 1.0
