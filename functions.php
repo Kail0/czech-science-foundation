@@ -110,9 +110,11 @@ function gacr_widgets_init() {
 }
 add_action( 'widgets_init', 'gacr_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
+/*********************************************************************************************
+
+Enqueue scripts and styles
+
+*********************************************************************************************/
 function gacr_scripts() {
 	wp_enqueue_style( 'gacr-style', get_stylesheet_uri() );
 
@@ -146,8 +148,6 @@ Post & Page Thumbnails Support
 
 *********************************************************************************************/
 add_theme_support( 'post-thumbnails' );
-  // add_image_size( 'page-header', 1020, 142, true ); // Page Header
-  // add_image_size( 'logo', 250, 86, true );
   // add_image_size( 'page-width', 700, 500, true );
   add_image_size( 'square', 500, 500, true );
   add_image_size( 'card-header', 892, 250, true ); // Page Header
@@ -172,8 +172,6 @@ function my_custom_sizes( $sizes ) {
 DELETE PARAGRAPH TAGS on PAGE
 
 *********************************************************************************************/
-// remove_filter( 'the_content', 'wpautop' );
-// remove_filter( 'the_excerpt', 'wpautop' );
 function remove_p_on_pages() {
     if ( is_page() ) {
         remove_filter( 'the_content', 'wpautop' );
@@ -192,7 +190,7 @@ function custom_sidebars() {
 
 	$args = array(
 		'id'            => 'blog',
-		'name'          => __( 'Blog', 'text_sidebar' ),
+		'name'          => esc_html__( 'Blog', 'text_sidebar' ),
 		'before_title'  => '<h5 class="widget-title">',
 		'after_title'   => '</h5>',
 		'before_widget' => '<div class="card"><aside id="%1$s" class="widget %2$s">',
@@ -202,7 +200,7 @@ function custom_sidebars() {
 
 	$args = array(
 		'id'            => 'page',
-		'name'          => __( 'Page', 'text_sidebar' ),
+		'name'          => esc_html__( 'Page', 'text_sidebar' ),
 		'before_title'  => '<h5 class="widget-title">',
 		'after_title'   => '</h5>',
 		'before_widget' => '<div class="card"><aside id="%1$s" class="widget %2$s">',
@@ -212,8 +210,8 @@ function custom_sidebars() {
 
 	$args = array(
 		'id'            => 'homepage\'',
-		'name'          => __( 'Homepage', 'text_sidebar' ),
-		'description'   => __( 'Widgets on the homepage', 'text_sidebar' ),
+		'name'          => esc_html__( 'Homepage', 'text_sidebar' ),
+		'description'   => esc_html__( 'Widgets on the homepage', 'text_sidebar' ),
 		'before_title'  => '<h5 class="widget-title">',
 		'after_title'   => '</h5>',
 		'before_widget' => '<div class="card"><aside id="%1$s" class="widget %2$s">',
@@ -223,8 +221,8 @@ function custom_sidebars() {
 
 	$args = array(
 		'id'            => 'Homepage Button',
-		'name'          => __( 'homepage-button', 'text_sidebar' ),
-		'description'   => __( 'Buttons for specific items', 'text_sidebar' ),
+		'name'          => esc_html__( 'homepage-button', 'text_sidebar' ),
+		'description'   => esc_html__( 'Buttons for specific items', 'text_sidebar' ),
 		'before_title'  => '<h5 class="widget-title">',
 		'after_title'   => '</h5>',
 		'before_widget' => '<a class="waves-effect waves-light btn-large gacr-blue">',
