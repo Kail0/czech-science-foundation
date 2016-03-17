@@ -1,4 +1,4 @@
-# czech-science-foundation
+#Czech Science Foundation
 Gacr.cz source code and issue tracker https://gacr.cz/
 
 Master branch is not uder active development, since I will be focusing more on new, more material designish, version.
