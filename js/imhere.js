@@ -12,7 +12,7 @@
   );
       
   	
-
+$('li.page_item').addClass('waves-effect waves-light');
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space

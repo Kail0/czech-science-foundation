@@ -116,17 +116,16 @@ Enqueue scripts and styles
 
 *********************************************************************************************/
 function gacr_scripts() {
-	wp_enqueue_style( 'gacr-style', get_stylesheet_uri() );
-
 // Add Material scripts and styles
 	if( !is_admin()){
 		
 		wp_deregister_script('jquery');
-		wp_register_script( 'material-jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array(), '2.2', false );
+		wp_register_script( 'material-jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array(), '2.2', 'in_footer' );
 		wp_enqueue_script( 'material-jquery' );
 	
 	}
 	wp_enqueue_style( 'material-style', get_template_directory_uri() . '/css/materialize.css' );
+	wp_enqueue_style( 'gacr-style', get_stylesheet_uri() );
 	wp_enqueue_script('material-script', get_template_directory_uri().'/js/materialize.js', array(), '1.0', 'in_footer' );
 	wp_enqueue_script('imhere', get_template_directory_uri().'/js/imhere.js', array(), '1.0', 'in_footer' );
 	wp_enqueue_script('kailo_ticker', get_template_directory_uri().'/js/kailo_ticker.js', array(), '1.0', 'in_footer' );
