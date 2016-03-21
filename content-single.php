@@ -10,8 +10,6 @@
             <div class="entry-content">
 
                 <?php
-                    /* translators: %s: Name of current post */
-
                     if (! is_single()) {
                         the_excerpt();
                     } else {
