@@ -46,7 +46,7 @@
     </div><!-- END TICKER -->
         <div class="row">
             <!-- <div class="col s4">&nbsp;</div> -->
-            <div class="col s9 homepage">
+            <div class="col l9 s12 homepage">
                 <main id="main" class="site-main" role="main"> <!-- NEWS -->
             <?php
                 $custom_args = array (
