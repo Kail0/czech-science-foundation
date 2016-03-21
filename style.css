@@ -797,6 +797,64 @@ color: #fff;
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+/* card display */
+.card {
+  overflow: hidden;
+  -moz-box-sizing: border-box;
+  -moz-border-radius: 2px;
+  background-clip: padding-box;
+  }
+ 
+.card .card-title {background: rgba(255, 255, 255, 0.42);}
+ 
+.card a {
+-webkit-transition: color 0.3s ease;
+-moz-transition: color 0.3s ease;
+-o-transition: color 0.3s ease;
+-ms-transition: color 0.3s ease;
+transition: color 0.3s ease;
+text-transform: none;
+}
+ 
+.card-title h1.entry-title {
+font-size: 2.2rem;
+text-transform: none;
+line-height: 2.8rem;
+margin: 1.8rem 0 1rem 0;
+}
+ 
+.card-title .entry-meta {
+  font-size: 1.3rem;
+}
+ 
+.card .card-content p {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #666;
+}
+ 
+
+/* Content */
+.card .card-title, .card .card-title a {
+	color: #D60376;
+} 
+ 
+.card a:hover {
+  color: #64b5f6; 
+}
+ 
+.card a {
+  color: #039be5;
+  margin-right: 0;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
 .sticky {
 	display: block;
 }
