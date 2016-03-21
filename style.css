@@ -47,7 +47,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-
+html {
+	font-family: 'Roboto',sans-serif;
+}
 body {
 	margin: 0;
 }
@@ -261,7 +263,7 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-body,
+/*body,
 button,
 input,
 select,
@@ -271,7 +273,7 @@ textarea {
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
-}
+}*/
 
 h1,
 h2,
@@ -798,7 +800,10 @@ color: #fff;
 .sticky {
 	display: block;
 }
-
+div#content {
+padding-top: 20px;
+}
+ 
 .hentry {
 	margin: 0 0 1.5em;
 }
