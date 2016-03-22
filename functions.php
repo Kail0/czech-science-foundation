@@ -182,7 +182,7 @@ Post & Page Thumbnails Support
 
 *********************************************************************************************/
 add_theme_support( 'post-thumbnails' );
-  // add_image_size( 'page-width', 700, 500, true );
+  // add_image_size( 'page-width', 800, 500, true );
   add_image_size( 'square', 500, 500, true );
   add_image_size( 'card-header', 892, 250, true ); // Page Header
 
