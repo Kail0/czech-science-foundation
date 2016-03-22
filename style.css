@@ -804,9 +804,7 @@ color: #fff;
   -moz-border-radius: 2px;
   background-clip: padding-box;
   }
- 
-.card .card-title {background: rgba(255, 255, 255, 0.42);}
- 
+  
 .card a {
 -webkit-transition: color 0.3s ease;
 -moz-transition: color 0.3s ease;
@@ -814,6 +812,8 @@ color: #fff;
 -ms-transition: color 0.3s ease;
 transition: color 0.3s ease;
 text-transform: none;
+  color: #039be5;
+  margin-right: 0;
 }
  
 .card-title h1.entry-title {
@@ -844,15 +844,28 @@ margin: 1.8rem 0 1rem 0;
   color: #64b5f6; 
 }
  
-.card a {
-  color: #039be5;
-  margin-right: 0;
-  -webkit-transition: color 0.3s ease;
-  -moz-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
-  -ms-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-  text-transform: uppercase;
+/* Relative path when not desktop */
+@media screen and (max-width: 568px) {
+	
+.card .card-image .card-title {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+	}
+	
+h1.entry-title {
+  font-size: 2.0rem;
+  text-transform: none;
+  line-height: 2.4rem;
+  padding: 0 1.2rem;
+	}
+	
+.entry-meta {
+  padding: 0 1.2rem;
+  font-size: 22px;
+	}
+	
 }
 
 .sticky {

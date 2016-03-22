@@ -98,17 +98,52 @@ add_action( 'after_setup_theme', 'gacr_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function gacr_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'gacr' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+
+	$args = array(
+		'id'            => 'blog',
+		'name'          => esc_html__( 'Blog', 'text_sidebar' ),
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
+		'before_widget' => '<div class="card"><aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside></div>',
+	);
+	register_sidebar( $args );
+
+	$args = array(
+		'id'            => 'page',
+		'name'          => esc_html__( 'Page', 'text_sidebar' ),
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
+		'before_widget' => '<div class="card"><aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside></div>',
+	);
+	register_sidebar( $args );
+
+	$args = array(
+		'id'            => 'homepage',
+		'name'          => esc_html__( 'Homepage', 'text_sidebar' ),
+		'description'   => esc_html__( 'Widgets on the homepage', 'text_sidebar' ),
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
+		'before_widget' => '<div class="card"><aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside></div>',
+	);
+	register_sidebar( $args );
+
+	$args = array(
+		'id'            => 'Homepage Button',
+		'name'          => esc_html__( 'homepage-button', 'text_sidebar' ),
+		'description'   => esc_html__( 'Buttons for specific items', 'text_sidebar' ),
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
+		'before_widget' => '<a class="waves-effect waves-light btn-large gacr-blue">',
+		'after_widget'  => '</a>',
+	);
+	register_sidebar( $args );
+
 }
 add_action( 'widgets_init', 'gacr_widgets_init' );
+
 
 /*********************************************************************************************
 
@@ -178,59 +213,6 @@ function remove_p_on_pages() {
     }
 }
 add_action( 'wp_head', 'remove_p_on_pages' );
-
-/*********************************************************************************************
-
-REGISTER SIDEBAR ON HOMEPAGE
-
-*********************************************************************************************/
-// Register Sidebars
-function custom_sidebars() {
-
-	$args = array(
-		'id'            => 'blog',
-		'name'          => esc_html__( 'Blog', 'text_sidebar' ),
-		'before_title'  => '<h5 class="widget-title">',
-		'after_title'   => '</h5>',
-		'before_widget' => '<div class="card"><aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside></div>',
-	);
-	register_sidebar( $args );
-
-	$args = array(
-		'id'            => 'page',
-		'name'          => esc_html__( 'Page', 'text_sidebar' ),
-		'before_title'  => '<h5 class="widget-title">',
-		'after_title'   => '</h5>',
-		'before_widget' => '<div class="card"><aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside></div>',
-	);
-	register_sidebar( $args );
-
-	$args = array(
-		'id'            => 'homepage\'',
-		'name'          => esc_html__( 'Homepage', 'text_sidebar' ),
-		'description'   => esc_html__( 'Widgets on the homepage', 'text_sidebar' ),
-		'before_title'  => '<h5 class="widget-title">',
-		'after_title'   => '</h5>',
-		'before_widget' => '<div class="card"><aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside></div>',
-	);
-	register_sidebar( $args );
-
-	$args = array(
-		'id'            => 'Homepage Button',
-		'name'          => esc_html__( 'homepage-button', 'text_sidebar' ),
-		'description'   => esc_html__( 'Buttons for specific items', 'text_sidebar' ),
-		'before_title'  => '<h5 class="widget-title">',
-		'after_title'   => '</h5>',
-		'before_widget' => '<a class="waves-effect waves-light btn-large gacr-blue">',
-		'after_widget'  => '</a>',
-	);
-	register_sidebar( $args );
-
-}
-add_action( 'widgets_init', 'custom_sidebars' );
 
 /**
  * Implement the Custom Header feature.
