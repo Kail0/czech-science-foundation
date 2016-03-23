@@ -5,7 +5,9 @@ Master/Production branch is not under active development, since I will be focusi
 
 This theme is(or will be) heavily influenced by Material Design from Google. I'm doing my best to be as precise to MD guide, as possible.
 
-##ToDofeatures
+##ToDo
+
+##Features
 
 ##Installation
 
