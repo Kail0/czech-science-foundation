@@ -159,13 +159,13 @@ function gacr_scripts() {
 		wp_enqueue_script( 'material-jquery' );
 	
 	}
-	wp_enqueue_style( 'material-style', get_template_directory_uri() . '/css/materialize.css' );
+	wp_enqueue_style( 'material-style', get_template_directory_uri() . '/css/materialize.css', array(), '0.1', true );
 	wp_enqueue_style( 'gacr-style', get_stylesheet_uri() );
+	wp_enqueue_style('material-icons', '//fonts.googleapis.com/icon?family=Material+Icons', array(), '0.2' );
+	wp_enqueue_style('roboto', '//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700&subset=latin,latin-ext', array(), '0.1' );
 	wp_enqueue_script('material-script', get_template_directory_uri().'/js/materialize.js', array(), '1.0', 'in_footer' );
 	wp_enqueue_script('imhere', get_template_directory_uri().'/js/imhere.js', array(), '1.0', 'in_footer' );
 	wp_enqueue_script('kailo_ticker', get_template_directory_uri().'/js/kailo_ticker.js', array(), '1.0', 'in_footer' );
-	wp_enqueue_style('material-icons', '//fonts.googleapis.com/icon?family=Material+Icons' );
-	// wp_enqueue_style('font-awesome', get_template_directory_uri().'/font/font-awesome/css/font-awesome.min.css' );
 
 	wp_enqueue_script( 'gacr-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
