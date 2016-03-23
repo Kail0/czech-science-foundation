@@ -50,17 +50,16 @@ get_header(); ?>
 		
 			</main><!-- #main -->
 		</div><!-- #primary -->
-		
+	
 <?php if ( is_home() ) : ?>
     <?php get_sidebar( 'homepage' ); ?>
 <?php elseif ( is_404() ) : ?>
-    <div class="col s12 m4 l3 homepage">
+
     <?php get_sidebar( '404' ); ?>
-    </div>
+
 <?php else : ?>
     <?php get_sidebar( 'homepage'); ?>
 <?php endif; ?>
-
 
 	</div> <!-- row -->
 

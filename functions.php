@@ -123,8 +123,8 @@ function gacr_widgets_init() {
 		'id'            => 'homepage',
 		'name'          => esc_html__( 'Homepage', 'text_sidebar' ),
 		'description'   => esc_html__( 'Widgets on the homepage', 'text_sidebar' ),
-		'before_title'  => '<h5 class="widget-title">',
-		'after_title'   => '</h5>',
+		'before_title'  => '<h3 class="widget-title gacr-blue white-text">',
+		'after_title'   => '</h3>',
 		'before_widget' => '<div class="card"><aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside></div>',
 	);
@@ -201,11 +201,9 @@ function my_custom_sizes( $sizes ) {
     ) );
 }
 
-/*********************************************************************************************
-
+/**********************************************
 DELETE PARAGRAPH TAGS on PAGE
-
-*********************************************************************************************/
+**********************************************/
 function remove_p_on_pages() {
     if ( is_page() ) {
         remove_filter( 'the_content', 'wpautop' );
@@ -213,6 +211,55 @@ function remove_p_on_pages() {
     }
 }
 add_action( 'wp_head', 'remove_p_on_pages' );
+
+/**********************************************
+RECENT POST STYLE
+**********************************************/
+Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
+
+  function widget($args, $instance) {
+
+    extract( $args );
+
+    $title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Posts') : $instance['title'], $instance, $this->id_base);
+
+    if( empty( $instance['number'] ) || ! $number = absint( $instance['number'] ) )
+      $number = 10;
+
+    $r = new WP_Query( apply_filters( 'widget_posts_args', array(
+                                                        'posts_per_page' => 5,
+                                                        'no_found_rows' => true,
+                                                        'cat' => '3',
+                                                        'post_status' => 'publish',
+                                                        'ignore_sticky_posts' => true
+                                                        ) ) );
+    if( $r->have_posts() ) :
+
+      echo $before_widget;
+      if( $title ) echo $before_title . $title . $after_title; ?>
+      <ul class="collection rpwidget">
+        <?php while( $r->have_posts() ) : $r->the_post(); ?>
+        <li class="collection-item avatar">
+          <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/GACR-CZ_square_50x50x.png' ); ?>" class="alignleft circle" alt="GACR-CZ_RGB">
+          <span class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></span>
+          <p><?php the_time('j. n. Y'); ?></p>
+        </li>
+        <?php endwhile; ?>
+      </ul>
+
+      <?php
+      echo $after_widget;
+
+    wp_reset_postdata();
+
+    endif;
+  }
+}
+function my_recent_widget_registration() {
+  unregister_widget('WP_Widget_Recent_Posts');
+  register_widget('My_Recent_Posts_Widget');
+}
+add_action('widgets_init', 'my_recent_widget_registration');
 
 /**
  * Implement the Custom Header feature.
