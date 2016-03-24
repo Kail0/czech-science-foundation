@@ -26,6 +26,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Normalize
 # Typography
 # Elements
+# Lists
 # Forms
 # Navigation
 	## Links
@@ -412,6 +413,43 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+/*--------------------------------------------------------------
+# Lists
+--------------------------------------------------------------*/
+.disc-list, .decimal-list, .roman-list, .square-list {
+  margin: 0 0 24px 35px;
+}
+.disc-list .disc-item {
+  margin: 0 0 4px;
+  list-style-type: disc;
+}
+.decimal-list .decimal-item {
+  margin: 0 0 4px;
+  list-style-type: decimal;
+}
+
+.roman-list .roman-list-item {
+    margin: 0 0 4px;
+  list-style: lower-roman;
+}
+.margin-list {
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.margin-list .margin-item {
+  background-color: #fff;
+  line-height: 1.5rem;
+  padding: 10px 20px;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+ul.dotted-list li { padding: 5px 0 5px 20px;border-bottom: 1px dotted #bdbdbd; }
+ul.square li { list-style: square; margin: 0 0 4px;}
+ul.lowroman-list { list-style-type: lower-roman; }
+ul.lower-alpha-list { list-style-type: lower-alpha; }
+ul.circle-list li { list-style-type: circle; }
 
 /*--------------------------------------------------------------
 # Forms
