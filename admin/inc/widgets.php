@@ -28,9 +28,9 @@ function kailoframework_widgets_init() {
     'name' => __( 'Footer', 'kailoframework' ),
     'id' => 'footer-sidebar',
 	'description' => __( "Widgetized footer", 'kailoframework' ),
-    'before_widget' => '<div class="col l4 s12 left widget-container %2$s" id="%1$s">',
+    'before_widget' => '<div class="col l3 s12 left widget-container %2$s" id="%1$s">',
     'after_widget' => '</div>',
-    'before_title' => '<h4>','after_title' => '</h4>'
+    'before_title' => '<h3>','after_title' => '</h3>'
     ) );
 
 

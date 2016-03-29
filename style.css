@@ -227,6 +227,9 @@ width: 250px;
 #footer .widget-container ul ul {
    margin: 5px 0 0 0px;
 }
+footer .textwidget, #footer .textwidget {
+    color: #FFF;
+}
 /* ---------------------------------------------------------------------- */
 /* FOOTER CONTACT INFO
 /* ---------------------------------------------------------------------- */

@@ -99,6 +99,9 @@ blockquote {
 .no-border {
   border: 0;
 }
+.widget-2 .textwidget {
+    padding: 10px;
+}
 .pagination li {
   display: inline-block;
   font-size: 1.2rem;
@@ -239,4 +242,43 @@ ul.kb-content-gacr li a {
 }
 .knowledge-base-gacr .card .card-content .card-title {
     line-height: 25px;
+}
+
+/* WORKING HOURS TABLE*/
+#footer h3 {
+    color: rgba(255,255,255,0.95);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+table.dashed.working_hours > thead > tr,
+table.dashed.working_hours > tbody > tr {
+  border-bottom: 1px dashed #67757b;
+}
+table.dashed.working_hours tr {
+    font-size: 13px;
+    font-weight: 500;
+}
+table.dashed.working_hours td, th {
+  padding: 9px 0;
+}
+
+
+@media only screen and (max-width: 992px) {
+  table.responsive-table.dashed.working_hours th {
+    border-bottom: 0;
+    border-left: 0;
+  }
+  table.responsive-table.dashed.working_hours td {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  table.responsive-table.dashed.working_hours tr {
+    border: 0;
+  }
+  table.responsive-table.dashed.working_hours tbody tr {
+    border-right: 1px solid #d0d0d0;
+  }
 }
