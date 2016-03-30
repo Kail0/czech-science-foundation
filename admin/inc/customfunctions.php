@@ -270,16 +270,17 @@ function kailoframework_comments($comment, $args, $depth) {
 SEARCH FORM LAYOUT
 
 *********************************************************************************************/
-// Search Form
-function kailoframework_wpsearch($form) {
-    $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-    <label class="screen-reader-text" for="s">' . __('Search for:', 'kailoframework') . '</label>
-    <input type="text" value="' . get_search_query() . '" name="s" id="search" placeholder="'. __('Hledat...','kailoframework').'" />
-    <input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
+function wpdocs_my_search_form( $form ) {
+    $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
+    <div><label class="screen-reader-text" for="s">' . __( 'Search for:' ) . '</label>
+    <input type="text" value="' . get_search_query() . '" name="s" id="s" />
+    <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" />
+    </div>
     </form>';
+ 
     return $form;
 }
-
+add_filter( 'get_search_form', 'wpdocs_my_search_form' );
 /*********************************************************************************************
 
 DELETE PARAGRAPH TAGS on PAGE

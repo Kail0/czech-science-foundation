@@ -52,7 +52,7 @@ function kailoframework_theme_support() {
 // launching this stuff after theme setup
 add_action('after_setup_theme','kailoframework_theme_support');
 // adding the kailoframework search form (created in functions.php)
-add_filter( 'get_search_form', 'kailoframework_wpsearch' );
+// add_filter( 'get_search_form', 'kailoframework_wpsearch' );
 
 
 /****************** PLUGINS & EXTRA FEATURES **************************/
