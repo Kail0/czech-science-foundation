@@ -50,7 +50,7 @@
                 <main id="main" class="site-main" role="main"> <!-- NEWS -->
             <?php
                 $custom_args = array (
-                    'cat'                    => '-17, -292',
+                    'cat'                    => '-17, -292, -87',
                     'posts_per_page'         => '5',
                     'paged' => $paged
                 );
@@ -72,7 +72,7 @@
 
 
                 <?php else : ?>
-                    <p><?php _e( 'Nic zde není.' ); ?></p>
+                    <p><?php esc_html_e ( 'Nic zde není.' ); ?></p>
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
             </main> <!-- END NEWS -->

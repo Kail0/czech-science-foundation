@@ -181,7 +181,12 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
 .committees li.collection-item:hover {
         background-color: #f2f2f2;
 }
-
+.collapsible-header {
+    transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+}
 /* --------------------------------- */
 /* ----------- FAQ ------------ */
 /* --------------------------------- */
