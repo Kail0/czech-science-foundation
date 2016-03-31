@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress Bootstrap Pagination
+ * WordPress MD Pagination
  */
 
 function wp_md_pagination( $args = array() ) {

@@ -153,11 +153,11 @@ Enqueue scripts and styles
 function gacr_scripts() {
 // Add Material scripts and styles
 	if( !is_admin()){
-		
+
 		wp_deregister_script('jquery');
 		wp_register_script( 'material-jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array(), '2.2', 'in_footer' );
 		wp_enqueue_script( 'material-jquery' );
-	
+
 	}
 	wp_enqueue_style( 'material-style', get_template_directory_uri() . '/css/materialize.css', array(), '0.2' );
 	wp_enqueue_style( 'gacr-style', get_stylesheet_uri() , array(), '0.2' );
@@ -227,10 +227,10 @@ Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
       $number = 10;
 
     $r = new WP_Query( apply_filters( 'widget_posts_args', array(
-                                                        'posts_per_page' => 5,
+                                                        'posts_per_page' => 5,      //how many posts per page
                                                         'no_found_rows' => true,
-                                                        'cat' => '3',
-                                                        'post_status' => 'publish',
+                                                        'cat' => '3',               //what categories you want to show;'-' for exlude cat
+                                                         'post_status' => 'publish',
                                                         'ignore_sticky_posts' => true
                                                         ) ) );
     if( $r->have_posts() ) :
