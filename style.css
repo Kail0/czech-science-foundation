@@ -606,7 +606,7 @@ height: 56px;
 line-height: 56px;
 overflow: hidden;
 }
- 
+
 nav ul a {
     font-weight: 500;
     color: #444;
@@ -864,7 +864,7 @@ ul.collection.rpwidget {
   -moz-border-radius: 2px;
   background-clip: padding-box;
   }
-  
+
 .card a {
 -webkit-transition: color 0.3s ease;
 -moz-transition: color 0.3s ease;
@@ -875,57 +875,57 @@ text-transform: none;
   color: #039be5;
   margin-right: 0;
 }
- 
+
 .card-title h1.entry-title {
 font-size: 2.2rem;
 text-transform: none;
 line-height: 2.8rem;
 margin: 1.8rem 0 1rem 0;
 }
- 
+
 .card-title .entry-meta {
   font-size: 1.3rem;
 }
- 
+
 .card .card-content p {
   margin: 0;
   margin-bottom: 20px;
   font-size: 1.1rem;
   color: #666;
 }
- 
+
 
 /* Content */
 .card .card-title, .card .card-title a {
 	color: #D60376;
-} 
- 
-.card a:hover {
-  color: #64b5f6; 
 }
- 
+
+.card a:hover {
+  color: #64b5f6;
+}
+
 /* Relative path when not desktop */
 @media screen and (max-width: 568px) {
-	
+
 .card .card-image .card-title {
   position: relative;
   bottom: 0;
   left: 0;
   padding: 0;
 	}
-	
+
 h1.entry-title {
   font-size: 2.0rem;
   text-transform: none;
   line-height: 2.4rem;
   padding: 0 1.2rem;
 	}
-	
+
 .entry-meta {
   padding: 0 1.2rem;
   font-size: 22px;
 	}
-	
+
 }
 
 .sticky {
@@ -934,7 +934,7 @@ h1.entry-title {
 div#content {
 padding-top: 20px;
 }
- 
+
 .hentry {
 	margin: 0 0 1.5em;
 }
@@ -1163,7 +1163,7 @@ h6 {
 @media only screen and (min-width : 993px) {
   .container {
     width: 65%; } }
-    
+
 .m-container nav {
   color: #fff;
   background-color: transparent;
@@ -1274,7 +1274,7 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
 }
 
 /* --------------------------------- */
-/* ----------- FAQ ------------ */
+/* ----------- FAQ  WIP ------------ */
 /* --------------------------------- */
 ul.kb-content-gacr li:hover, ul.kb-content-gacr li.active {
     background-color: rgba(0,0,0,0.05);
