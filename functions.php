@@ -261,6 +261,16 @@ function my_recent_widget_registration() {
 }
 add_action('widgets_init', 'my_recent_widget_registration');
 
+/*********************************************
+Register MD PAGI
+**********************************************/
+// require get_template_directory() . '/inc/wp_md_pagination.php';
+
+/*********************************************
+Register MEGA MENU
+**********************************************/
+require get_template_directory() . '/inc/mega_menu.php';
+
 /**
  * Implement the Custom Header feature.
  */
@@ -286,9 +296,7 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-/*********************************************************************************************
-Register Custom Navigation Walker
-*********************************************************************************************/
-require_once('inc/wp_md_pagination.php');
+
+/**** **/
 
 ?>
