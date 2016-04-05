@@ -50,9 +50,6 @@
 
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'hide-on-med-and-down' ) ); ?>
 
-						<!-- test material menu -->
-						<?php wp_nav_menu( array('theme_location'=>'primary','walker' => new Materialize_CSS_Menu_Walker(),'depth' => 0) ); ?>
-
 					</nav><!-- #site-navigation -->
 				<div class="clear"></div>
 		</div>
