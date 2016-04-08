@@ -88,7 +88,7 @@ add_action( 'after_setup_theme', 'gacr_setup' );
  * @global int $content_width
  */
 function gacr_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'gacr_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'gacr_content_width', 900 );
 }
 add_action( 'after_setup_theme', 'gacr_content_width', 0 );
 
@@ -144,27 +144,37 @@ function gacr_widgets_init() {
 }
 add_action( 'widgets_init', 'gacr_widgets_init' );
 
-
-/*********************************************************************************************
-
-Enqueue scripts and styles
-
-*********************************************************************************************/
+/*-----------------------------------------------------------------------------------*/
+/* Enqueue scripts and styles
+/*-----------------------------------------------------------------------------------*/
 function gacr_scripts() {
-// Add Material scripts and styles
 	if( !is_admin()){
 
+        //register new jQuery
 		wp_deregister_script('jquery');
 		wp_register_script( 'material-jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array(), '2.2', 'in_footer' );
 		wp_enqueue_script( 'material-jquery' );
 
 	}
+    // default material library
 	wp_enqueue_style( 'material-style', get_template_directory_uri() . '/css/materialize.css', array(), '0.2' );
+
+    // our own style
 	wp_enqueue_style( 'gacr-style', get_stylesheet_uri() , array(), '0.2' );
+
+    // material icons
 	wp_enqueue_style('material-icons', '//fonts.googleapis.com/icon?family=Material+Icons', array(), '0.2' );
+
+    //load Roboto via Google's servers because Roboto is dickbutt which has glitches on different browsers
 	wp_enqueue_style('roboto', '//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700&subset=latin,latin-ext', array(), '0.1' );
+
+    //material JS library
 	wp_enqueue_script('material-script', get_template_directory_uri().'/js/materialize.js', array(), '1.0', 'in_footer' );
+
+    //our own JS library
 	wp_enqueue_script('imhere', get_template_directory_uri().'/js/imhere.js', array(), '1.0', 'in_footer' );
+
+    //standlone library for my ticker
 	wp_enqueue_script('kailo_ticker', get_template_directory_uri().'/js/kailo_ticker.js', array(), '1.0', 'in_footer' );
 
 	wp_enqueue_script( 'gacr-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -175,23 +185,17 @@ function gacr_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gacr_scripts' );
 
-
-/*********************************************************************************************
-
-Post & Page Thumbnails Support
-
-*********************************************************************************************/
+/*-----------------------------------------------------------------------------------*/
+/* Post & Page Thumbnails Support
+/*-----------------------------------------------------------------------------------*/
 add_theme_support( 'post-thumbnails' );
   // add_image_size( 'page-width', 800, 500, true );
   add_image_size( 'square', 500, 500, true );
   add_image_size( 'card-header', 892, 250, true ); // Page Header
 
-
-/*********************************************************************************************
-
-Hook Image size option into Media Library
-
-*********************************************************************************************/
+/*-----------------------------------------------------------------------------------*/
+/* Hook Image size option into Media Library
+/*-----------------------------------------------------------------------------------*/
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 
 function my_custom_sizes( $sizes ) {
@@ -201,9 +205,9 @@ function my_custom_sizes( $sizes ) {
     ) );
 }
 
-/**********************************************
-DELETE PARAGRAPH TAGS on PAGE
-**********************************************/
+/*-----------------------------------------------------------------------------------*/
+/* Delete paragraphs on WP page and keep it in WP post page
+/*-----------------------------------------------------------------------------------*/
 function remove_p_on_pages() {
     if ( is_page() ) {
         remove_filter( 'the_content', 'wpautop' );
@@ -212,9 +216,9 @@ function remove_p_on_pages() {
 }
 add_action( 'wp_head', 'remove_p_on_pages' );
 
-/**********************************************
-RECENT POST STYLE
-**********************************************/
+/*-----------------------------------------------------------------------------------*/
+/* MD query for Recent Posts on Homepage
+/*-----------------------------------------------------------------------------------*/
 Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
 
   function widget($args, $instance) {
@@ -261,15 +265,20 @@ function my_recent_widget_registration() {
 }
 add_action('widgets_init', 'my_recent_widget_registration');
 
-/*********************************************
-Register MD PAGI
-**********************************************/
+/*-----------------------------------------------------------------------------------*/
+/* Register MD pagination - WIP
+/*-----------------------------------------------------------------------------------*/
 // require get_template_directory() . '/inc/wp_md_pagination.php';
 
-/*********************************************
-Register MEGA MENU
-**********************************************/
-require get_template_directory() . '/inc/mega_menu.php';
+
+/*-----------------------------------------------------------------------------------*/
+/* Register mega Menu - I'll propably use plugin based solutions since I suck at Walker's function
+/*-----------------------------------------------------------------------------------*/
+// require get_template_directory() . '/inc/mega_menu.php';
+
+
+
+
 
 /**
  * Implement the Custom Header feature.
