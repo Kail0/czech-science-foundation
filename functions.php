@@ -185,6 +185,20 @@ function gacr_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gacr_scripts' );
 
+
+/*-----------------------------------------------------------------------------------*/
+/* Register main menu and drawer
+/*-----------------------------------------------------------------------------------*/
+register_nav_menus(
+    array(
+        'primary'   =>  __( 'Primary Menu', 'gacr' ),
+        'drawer'   =>  __( 'Drawer Menu', 'gacr' ),
+        // Register the Primary menu
+        // Copy and paste the line above right here if you want to make another menu,
+        // just change the 'primary' to another name
+    )
+);
+
 /*-----------------------------------------------------------------------------------*/
 /* Post & Page Thumbnails Support
 /*-----------------------------------------------------------------------------------*/
@@ -192,6 +206,7 @@ add_theme_support( 'post-thumbnails' );
   // add_image_size( 'page-width', 800, 500, true );
   add_image_size( 'square', 500, 500, true );
   add_image_size( 'card-header', 892, 250, true ); // Page Header
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Hook Image size option into Media Library
@@ -204,6 +219,7 @@ function my_custom_sizes( $sizes ) {
         'square' => __( 'Square dimension' ),
     ) );
 }
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Delete paragraphs on WP page and keep it in WP post page
