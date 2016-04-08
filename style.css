@@ -618,19 +618,19 @@ background-color: #27407b;
 color: #fff;
 }
 
-.main-navigation {
+/*.main-navigation {
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
 }
 
-/*.main-navigation ul {
+.main-navigation ul {
 	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
-}*/
+}
 
 .main-navigation li {
 	float: left;
@@ -658,7 +658,7 @@ color: #fff;
 
 .main-navigation ul ul a {
 	width: 200px;
-}
+}*/
 
 .main-navigation ul ul li {
 
