@@ -290,8 +290,11 @@ add_action('widgets_init', 'my_recent_widget_registration');
 /*-----------------------------------------------------------------------------------*/
 /* Register mega Menu - I'll propably use plugin based solutions since I suck at Walker's function
 /*-----------------------------------------------------------------------------------*/
-// require get_template_directory() . '/inc/mega_menu.php';
+ require get_template_directory() . '/inc/mega_menu.php';
 
+// register_nav_menus( array(
+//     'primary' => __( 'Primary Menu', 'THEMENAME' ),
+// ) );
 
 
 
