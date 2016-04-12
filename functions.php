@@ -42,10 +42,20 @@ function gacr_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'gacr' ),
-	) );
+/*-----------------------------------------------------------------------------------*/
+/* Register main menu and drawer
+/*-----------------------------------------------------------------------------------*/
+register_nav_menus(
+    array(
+        'primary'   =>  __( 'Primary Menu', 'gacr' ),
+        'drawer'   =>  __( 'Drawer Menu', 'gacr' ),
+        // Register the Primary menu and Drawer menu
+        // Theme uses wp_nav_menu() in TWO locations.
+        // Copy and paste the line above right here if you want to make another menu,
+        // just change the 'primary' to another name
+    )
+);
+
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -185,20 +195,6 @@ function gacr_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gacr_scripts' );
 
-
-/*-----------------------------------------------------------------------------------*/
-/* Register main menu and drawer
-/*-----------------------------------------------------------------------------------*/
-register_nav_menus(
-    array(
-        'primary'   =>  __( 'Primary Menu', 'gacr' ),
-        'drawer'   =>  __( 'Drawer Menu', 'gacr' ),
-        // Register the Primary menu
-        // Copy and paste the line above right here if you want to make another menu,
-        // just change the 'primary' to another name
-    )
-);
-
 /*-----------------------------------------------------------------------------------*/
 /* Post & Page Thumbnails Support
 /*-----------------------------------------------------------------------------------*/
@@ -291,11 +287,6 @@ add_action('widgets_init', 'my_recent_widget_registration');
 /* Register mega Menu - I'll propably use plugin based solutions since I suck at Walker's function
 /*-----------------------------------------------------------------------------------*/
  require get_template_directory() . '/inc/mega_menu.php';
-
-// register_nav_menus( array(
-//     'primary' => __( 'Primary Menu', 'THEMENAME' ),
-// ) );
-
 
 
 
