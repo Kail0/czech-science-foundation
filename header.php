@@ -43,25 +43,27 @@
 			</div><!-- .site-branding -->
 
 			<div class="m-container nav">
-					<nav id="site-navigation" class="main-navigation" role="navigation">
+					<nav id="site-navigation" class="white mythemes-topper" role="navigation">
+						<div class="nav-wrapper">
 						<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 
-						<?php wp_nav_menu( array(
-							'theme_location' => 'drawer',
-							'menu_class' => 'menu side-nav',
-							'menu_id' => 'mobile-nav',
-							'items_wrap' => '<ul id="%1$s" class="%2$s"><li class="mobile-header"><p>Menu</p></li>%3$s</ul><div class="clear"></div>'
-							)); ?>
+							<?php wp_nav_menu( array(
+								'theme_location' => 'drawer',
+								'menu_class' => 'menu side-nav',
+								'menu_id' => 'mobile-nav',
+								'items_wrap' => '<ul id="%1$s" class="%2$s"><li class="mobile-header"><p>Menu</p></li>%3$s</ul><div class="clear"></div>'
+								)); ?>
 
-						<?php wp_nav_menu( array(
-							'theme_location'=>'primary',
-							'menu_class' => 'hide-on-med-and-down',
-							'walker' => new Materialize_CSS_Menu_Walker()
-							)); ?>
-
+							<?php wp_nav_menu( array(
+								'theme_location'=>'primary',
+								'menu_class' => 'hide-on-med-and-down',
+								'walker' => new Materialize_CSS_Menu_Walker()
+								)); ?>
+						</div>
 					</nav><!-- #site-navigation -->
 				<div class="clear"></div>
 		</div>
+</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
