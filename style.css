@@ -888,7 +888,7 @@ margin: 1.8rem 0 1rem 0;
 
 /* Content */
 .card .card-title, .card .card-title a {
-	color: #D60376;
+	color: rgba(39, 65, 124, 0.93);
 }
 
 .card a:hover {
@@ -1109,9 +1109,10 @@ md-icon {
     width: 29px;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.1;
-  color: #27407b; }
+  color: rgba(39, 65, 124, 0.93);
+  }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   font-weight: inherit; }
