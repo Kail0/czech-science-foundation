@@ -43,7 +43,7 @@
 			</div><!-- .site-branding -->
 
 			<div class="m-container nav">
-					<nav id="site-navigation" class="white mythemes-topper" role="navigation">
+					<nav id="site-navigation" class="placeholder" role="navigation">
 						<div class="nav-wrapper">
 						<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 
