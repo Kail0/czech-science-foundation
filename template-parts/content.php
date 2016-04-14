@@ -8,13 +8,13 @@
  */
 
 ?>
-<!-- If is page single, show pictures of header, if not, do not show nothing. -->
+<!-- If is post page single, show pictures of header, if not, show regular card with not images -->
 <?php if ( is_single() ) { ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="card dismissable">
 		<?php if (has_post_thumbnail()) { ?>
-			<div class="card-image"> 
+			<div class="card-image">
 				<?php the_post_thumbnail('card-header');?>
 				<span class="card-title">
 					<header class="entry-header CONTENT">
@@ -23,7 +23,7 @@
 								the_title( '<h1 class="entry-title">', '</h1>' );
 							} else {
 								the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-							} 
+							}
 
 						if ( 'post' === get_post_type() ) : ?>
 						<div class="entry-meta">
@@ -44,7 +44,7 @@
 								the_title( '<h1 class="entry-title">', '</h1>' );
 							} else {
 								the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-							} 
+							}
 
 						if ( 'post' === get_post_type() ) : ?>
 						<div class="entry-meta">
@@ -87,11 +87,12 @@
 		        <span class="card-title">
 						<header class="entry-header CONTENT">
 							<?php
+								//if is single post add H1, otherwise add H2
 								if ( is_single() ) {
 									the_title( '<h1 class="entry-title">', '</h1>' );
 								} else {
 									the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-								} 
+								}
 
 							if ( 'post' === get_post_type() ) : ?>
 							<div class="entry-meta">
@@ -118,11 +119,13 @@
 			</div> <!-- card content -->
 			<div class="card-action">
 				<footer class="entry-footer">
-					<?php gacr_entry_footer(); ?>
+					<a href="<?php esc_url( the_permalink() ); ?>" class="white btn-floating waves-effect waves-circle z-depth-0">
+					    <?php printf( esc_html( '%s', 'gacr' ), '<i class="material-icons gacr-blue-text">&#xE5C8;</i>' ); ?>
+					</a>
 				</footer><!-- .entry-footer -->
 			</div>
 
-		</div><!--  card -->
+		</div><!-- card -->
 	</article><!-- #post-## -->
 
 <?php } ?>
