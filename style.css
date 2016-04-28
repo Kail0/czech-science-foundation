@@ -1162,7 +1162,7 @@ h6 {
   width: 100%;
   height: 56px;
   line-height: 56px;
-  overflow: hidden;
+  /*overflow: hidden;*/
   box-shadow: 0 0 0;
 }
 .gacr-blue { background-color: #27407b !important; }
@@ -1302,3 +1302,37 @@ ul.kb-content-gacr li a {
 .knowledge-base-gacr .card .card-content .card-title {
     line-height: 25px;
 }
+
+/* NAV MENU WIP */
+
+/*ul.dropdown-content > li {
+  position:relative;
+}
+
+li ul { display: none; }
+
+li:hover > ul {
+  display: block;
+  position: absolute;
+}
+
+li:hover li { float: none; }
+
+.dropdown-content li ul li { border-top: 0; }
+
+ul.menu-depth-1 ul.menu-depth-2 {
+  left: 100%;
+  top: 0;
+}
+
+.dropdown-content li:hover .sub-menu-item {
+  display: block;
+  position:absolute;
+  top: 0;
+  width: auto;
+}
+
+ul.dropdown-content {
+overflow: visible;
+
+}*/
