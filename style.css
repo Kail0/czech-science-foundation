@@ -1336,3 +1336,102 @@ ul.dropdown-content {
 overflow: visible;
 
 }*/
+
+
+/* MD DATA TABLE */
+/* Pointer as cursor */
+[class~="sorting"] {
+   cursor: pointer;
+}
+
+/* Hover background*/
+tr[class|="row"]:hover {
+   background-color : #eeeeee;
+}
+
+/* Cards within tables */
+[class^="tablepress-scroll-wrapper"],[class^="tablepress tablepress-id"]  {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+[class^="dataTables_wrapper"]>table {
+    box-shadow:none;
+}
+
+/* Head cells option*/
+.tablepress tr th {
+    font-size: 12px;
+    font-weight: 500;
+    color: #757575;
+    white-space: nowrap;
+    position: relative;
+    height: 56px;
+}
+
+/* Body cells option */
+.tablepress tr td {
+    font-size: 13px;
+    color: #212121;
+    height: 48px;
+    padding: 0;
+}
+
+/* padding and border for cells in head and body */
+.tablepress tr th, .tablepress tr td {
+    border-bottom: solid 1px #DDDDDD;
+    padding-left:56px;
+}
+
+/* padding for cells in head and body */
+.tablepress td:last-child, .tablepress th:last-child {
+    padding-right: 24px;
+}
+.tablepress td:first-child, .tablepress th:first-child {
+    padding-left: 24px;
+}
+
+/* First collumn will be aligned to the left when table with numbers */
+table.tablepress.number td:first-child, table.tablepress.number th:first-child {
+    text-align:left;
+}
+/* Second collumn and more will be aligned to the right when table with numbers */
+table.tablepress.number td:nth-child(n+2),table.tablepress.number th:nth-child(n+2){
+    text-align:right;
+}
+
+/* Every collumn will be aligned to the left by default */
+table.tablepress td, table.tablepress th {
+   /* background-color:red;*/
+    text-align:left;
+}
+/* Position for absolute value. This is important for pagination tweak*/
+.dataTables_wrapper {
+    position: relative;
+}
+/* Move pagination to the footer*/
+.dataTables_length {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   float: left;
+   white-space: nowrap;
+}
+.dataTables_wrapper label select {
+    display: inline;
+    margin: 2px;
+}
+select {
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    outline: none;
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0 0 15px 0;
+    padding: 0;
+    display: block;
+}
