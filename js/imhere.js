@@ -3,6 +3,7 @@
      $(function() {
 
 
+
          // SIDE MENU
          $('.button-collapse').sideNav({
              menuWidth: 300, // Default is 240
@@ -11,7 +12,7 @@
          });
 
          //waves efffect on NAV
-         $('li.page_item').addClass('waves-effect waves-light');
+         // $('li.page_item').addClass('waves-effect waves-light');
 
          // dropdown initialization
          $('.dropdown-button').dropdown({
@@ -23,7 +24,6 @@
              belowOrigin: true, // Displays dropdown below the button
              alignment: 'left' // Displays dropdown with edge aligned to the left of button
          });
-
 
      }); // end of document ready
  })(jQuery); // end of jQuery name space
