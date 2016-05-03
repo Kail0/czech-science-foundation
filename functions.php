@@ -317,6 +317,6 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 /**** **/
-// add_filter( 'tablepress_use_default_css', '__return_false' );
+add_filter( 'tablepress_use_default_css', '__return_false' );
 
 ?>
