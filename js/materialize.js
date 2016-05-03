@@ -52,14 +52,15 @@ if (typeof(jQuery) === 'undefined') {
 */
 
 // t: current time, b: begInnIng value, c: change In value, d: duration
-jQuery.easing['jswing'] = jQuery.easing['swing'];
+(function($, undefined) {
+$.easing['jswing'] = $.easing['swing'];
 
-jQuery.extend( jQuery.easing,
+$.extend( $.easing,
 {
 	def: 'easeOutQuad',
 	swing: function (x, t, b, c, d) {
-		//alert(jQuery.easing.default);
-		return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
+		//alert($.easing.default);
+		return $.easing[$.easing.def](x, t, b, c, d);
 	},
 	easeInQuad: function (x, t, b, c, d) {
 		return c*(t/=d)*t + b;
@@ -168,7 +169,7 @@ jQuery.extend( jQuery.easing,
 		return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
 	},
 	easeInBounce: function (x, t, b, c, d) {
-		return c - jQuery.easing.easeOutBounce (x, d-t, 0, c, d) + b;
+		return c - $.easing.easeOutBounce (x, d-t, 0, c, d) + b;
 	},
 	easeOutBounce: function (x, t, b, c, d) {
 		if ((t/=d) < (1/2.75)) {
@@ -182,11 +183,11 @@ jQuery.extend( jQuery.easing,
 		}
 	},
 	easeInOutBounce: function (x, t, b, c, d) {
-		if (t < d/2) return jQuery.easing.easeInBounce (x, t*2, 0, c, d) * .5 + b;
-		return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
+		if (t < d/2) return $.easing.easeInBounce (x, t*2, 0, c, d) * .5 + b;
+		return $.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
 	}
 });
-
+}) (jQuery);
 /*
  *
  * TERMS OF USE - EASING EQUATIONS
@@ -1960,7 +1961,7 @@ $(document).ready(function(){
         }
         else {
           // Insert as text;
-          toast.innerHTML = html; 
+          toast.innerHTML = html;
         }
         // Bind hammer
         var hammerHandler = new Hammer(toast, {prevent_default: false});
@@ -2539,9 +2540,9 @@ $(document).ready(function(){
 		    var offset = $(this.hash).offset().top + 1;
 
 //          offset - 200 allows elements near bottom of page to scroll
-			
+
 	    	$('html, body').animate({ scrollTop: offset - 200 }, {duration: 400, queue: false, easing: 'easeOutCubic'});
-			
+
 		  });
 		});
 		options = options || {
@@ -2742,7 +2743,7 @@ $(document).ready(function(){
         $(this).addClass('tabbed');
         var $this = $(this);
         $this.one('blur', function(e) {
-          
+
           $(this).removeClass('tabbed');
         });
         return;
