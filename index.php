@@ -50,7 +50,6 @@ get_header(); ?>
 
 			</main><!-- #main -->
 		</div><!-- #primary -->
-
 <?php if ( is_home() ) : ?>
     <?php get_sidebar( 'homepage' ); ?>
 <?php elseif ( is_404() ) : ?>
