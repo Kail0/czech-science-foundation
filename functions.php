@@ -172,6 +172,10 @@ function gacr_scripts() {
     // our own style
 	wp_enqueue_style( 'gacr-style', get_stylesheet_uri() , array(), '0.2' );
 
+    //MD loading transition
+    wp_enqueue_style( 'MD-anime', get_template_directory_uri() . '/css/md-transition.min.css', array(), '0.2' );
+    wp_enqueue_style( 'MD-anime-css', get_template_directory_uri() . '/css/animate.min.css', array(), '0.2' );
+
     // material icons
 	wp_enqueue_style('material-icons', '//fonts.googleapis.com/icon?family=Material+Icons', array(), '0.2' );
 
@@ -185,7 +189,11 @@ function gacr_scripts() {
 	wp_enqueue_script('imhere', get_template_directory_uri().'/js/imhere.js', array(), '1.0', 'in_footer' );
 
     //standlone library for my ticker
-	wp_enqueue_script('kailo_ticker', get_template_directory_uri().'/js/kailo_ticker.js', array(), '1.0', 'in_footer' );
+	wp_enqueue_script('kailo_ticker', get_template_directory_uri().'/js/kailo.jquery.ticker.js', array(), '1.0', 'in_footer' );
+
+    //MD loding transition
+    wp_enqueue_script('MD-anime-js', get_template_directory_uri().'/js/jquery.md-transition.min.js', array(), '1.0', 'in_footer' );
+    wp_enqueue_script('MD-oncreen-anime', get_template_directory_uri().'/js/jquery.onscreen.min.js', array(), '1.0', 'in_footer' );
 
 	wp_enqueue_script( 'gacr-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
