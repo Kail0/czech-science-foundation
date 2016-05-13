@@ -1,4 +1,4 @@
-/*
+
 Theme Name: gacr
 Theme URI: http://underscores.me/
 Author: Underscores.me
@@ -507,9 +507,9 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+	/* color: #666; */
+	/* border: 1px solid #ccc; */
+	/* border-radius: 3px; */
 }
 
 select {
@@ -1350,9 +1350,10 @@ tr[class|="row"]:hover {
 }
 
 /* Cards within tables */
-[class^="tablepress-scroll-wrapper"],[class^="tablepress tablepress-id"]  {
+[class^="tablepress-scroll-wrapper"], [class^="tablepress tablepress-id"]  {
     -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    position: relative;
 }
 [class^="dataTables_wrapper"]>table {
     box-shadow:none;
@@ -1392,11 +1393,11 @@ tr[class|="row"]:hover {
 
 /* First collumn will be aligned to the left when table with numbers */
 table.tablepress.number td:first-child, table.tablepress.number th:first-child {
-    text-align:left;
+    text-align: left;
 }
 /* Second collumn and more will be aligned to the right when table with numbers */
 table.tablepress.number td:nth-child(n+2),table.tablepress.number th:nth-child(n+2){
-    text-align:right;
+    text-align: right;
 }
 
 /* Every collumn will be aligned to the left by default */
@@ -1406,7 +1407,7 @@ table.tablepress td, table.tablepress th {
 }
 /* Position for absolute value. This is important for pagination tweak*/
 .dataTables_wrapper {
-    position: relative;
+    /* position: relative; */
 }
 /* Move pagination to the footer*/
 .dataTables_length {
@@ -1416,11 +1417,8 @@ table.tablepress td, table.tablepress th {
    float: left;
    white-space: nowrap;
 }
+/* Style select */
 .dataTables_wrapper label select {
-    display: inline;
-    margin: 2px;
-}
-select {
     position: relative;
     cursor: pointer;
     background-color: transparent;
@@ -1431,7 +1429,244 @@ select {
     line-height: 3rem;
     width: 100%;
     font-size: 1rem;
-    margin: 0 0 15px 0;
+    /* margin: 0 0 15px 0; */
     padding: 0;
-    display: block;
+    display: inline;
+    /* margin: 2px; */
+    width: auto;
 }
+/* Style search input */
+.dataTables_filter > label > input {
+    transition: all 0.3s ease;
+    background: transparent;
+    display: inline;
+    margin: 2px;
+    width: auto;
+    /* border: none; */
+    /* outline: none; */
+    /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); */
+}
+.dataTables_filter > label > input[type = search]:focus:not([readonly]) {
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    width: auto;
+    display: inline;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding-left: 3rem;
+}
+.dataTables_filter {
+    float: right;
+    white-space: nowrap;
+    position: absolute;
+    top: 11px;
+    right: 0;
+    padding-right: 14px;
+}
+.dataTables_filter > label {
+    position: relative;
+    display: inline-block;
+}
+.dataTables_filter > label:before {
+    font-family: 'Material Icons';
+    text-rendering: optimizeLegibility;
+    content: "search";
+    font-feature-settings: "liga" 1;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.3;
+    font-size: 24px;
+    display: block;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    bottom: 7px;
+    left: 10px;
+}
+
+/* SORTING */
+.tablepress .sorting_asc,.tablepress .sorting_desc {
+    color: #212121;
+}
+.tablepress .sorting:before {
+    content: "swap_vert";
+    font-family: 'Material Icons';
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga" 1;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.3;
+    font-size: 16px;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+}
+
+.tablepress .sorting_asc:before {
+    font-family: 'Material Icons';
+    content: "arrow_upward";
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga" 1;
+    font-style: normal;
+    /* text-transform: none;*/
+    line-height: 1.3;
+    font-size: 16px;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.tablepress .sorting_desc:before {
+    font-family: 'Material Icons';
+    content: "arrow_upward";
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga" 1;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.3;
+    font-size: 16px;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.tablepress [class*="sorting"]:before {
+    transition: -webkit-transform .25s, opacity .25s;
+    transition: all .25s, opacity .25s;
+}
+
+h2.tablepress-table-name {
+    font-size: 20px;
+    color: #212121;
+    /* height: 64px; */
+    padding-left: 24px;
+    margin: 21px 0 21px 0;
+    /* display: inline-block; */
+    padding-right: 14px;
+    display: flex;
+}
+
+[class|="tablepress"] .md-tablepagi i.material-icons {
+    line-height: 1;
+}
+
+.dataTables_paginate {
+    float: right;
+}
+.dataTables_length {
+    position: absolute;
+    bottom: 0;
+    right: 84px;
+    white-space: nowrap;
+}
+.dataTables_wrapper label select {
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    outline: none;
+    /* height: 2rem; */
+    /* width: 100%; */
+    /* font-size: 1rem; */
+    padding: 0;
+    display: inline-block;
+    width: auto;
+    margin: 0;
+}
+.tablepress caption {
+    display: none;
+}
+
+[class^="dataTables_wrapper"] table {
+    box-shadow:none;
+    margin: 0 0 0px 0;
+}
+
+[class|="tablepress"] .md-tablepagi {
+    background-color: red;
+    /* height: 24px; */
+    /* width: 24px; */
+    padding: 20px 0;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* --------------------------------- */
+/* ----------- MD EASING ANIMATION ------------ */
+/* --------------------------------- */
+/*.card-content {
+    animation-name: fadein;
+    animation-duration: .75s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: fadein;
+    -webkit-animation-duration: .75s;
+    -webkit-animation-iteration-count: 1;
+}
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(48px);
+        -webkit-transform: translateY(48px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px)
+    }
+}
+
+@-moz-keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(48px);
+        -webkit-transform: translateY(48px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px)
+    }
+}
+
+@-o-keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(48px);
+        -webkit-transform: translateY(48px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px)
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(48px);
+        -webkit-transform: translateY(48px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px)
+    }
+}*/
+
+/* MD MODAL ANIMATION
