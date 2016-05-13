@@ -25,5 +25,16 @@
              alignment: 'left' // Displays dropdown with edge aligned to the left of button
          });
 
+         // MD loding transition
+        $('[data-animation="animate"]').onScreen({
+            doIn: function() {
+                $(this).addClass('slideInUp animated')
+            },
+            tolerance: 0,
+            throttle: 0,
+            toggleClass: ''
+        });
+
+
      }); // end of document ready
  })(jQuery); // end of jQuery name space
