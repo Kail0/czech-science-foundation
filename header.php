@@ -52,8 +52,10 @@
 
 			<div class="m-container nav">
 					<nav id="site-navigation" class="placeholder" role="navigation">
+						<div class="morph-main-menu-button-wrapper">
+							<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+						</div>
 						<div class="nav-wrapper">
-						<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 
 							<?php wp_nav_menu( array(
 								'theme_location' => 'drawer',
