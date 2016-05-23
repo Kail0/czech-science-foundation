@@ -1,18 +1,17 @@
- // as the page loads, cal these scripts
+ // as the page loads, call these scripts
  (function($) {
      $(function() {
-
-
 
          // SIDE MENU
          $('.button-collapse').sideNav({
              menuWidth: 300, // Default is 240
-             edge: 'right', // Choose the horizontal origin
+             edge: 'left', // Choose the horizontal origin
              closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
          });
 
          //waves efffect on NAV
          // $('li.page_item').addClass('waves-effect waves-light');
+         // $('.side-nav').addClass('morph-menu-wrapper-active');
 
          // dropdown initialization
          $('.dropdown-button').dropdown({
@@ -25,7 +24,7 @@
              alignment: 'left' // Displays dropdown with edge aligned to the left of button
          });
 
-         // MD loding transition
+        //  // MD loding transition
         $('[data-animation="animate"]').onScreen({
             doIn: function() {
                 $(this).addClass('slideInUp animated')
@@ -34,6 +33,11 @@
             throttle: 0,
             toggleClass: ''
         });
+
+// Add ID to ...
+// $('.button-collapse').on('click', function() {
+//     $(".side-nav, .drag-target").attr('id','staggered-test').addClass('class1 class2');
+// });
 
 
      }); // end of document ready
