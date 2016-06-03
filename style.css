@@ -340,7 +340,14 @@ ins {
 big {
 	font-size: 125%;
 }
-
+@media only screen and (min-width: 993px) {
+	h1.entry-title, h2.entry-title {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+}
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -1668,3 +1675,4 @@ h2.tablepress-table-name {
         -webkit-transform: translateY(0px)
     }
 }
+
