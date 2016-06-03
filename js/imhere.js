@@ -40,5 +40,13 @@
 // });
 
 
+// $(window).on('load, resize', function mobileViewUpdate() {
+//     var viewportWidth = $(window).width();
+//     if (viewportWidth < 600) {
+//         $("h2.entry-title").addClass("truncate");
+//     }
+// });
+
+
      }); // end of document ready
  })(jQuery); // end of jQuery name space
