@@ -277,7 +277,7 @@ function wpdocs_my_search_form( $form ) {
     <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" />
     </div>
     </form>';
- 
+
     return $form;
 }
 add_filter( 'get_search_form', 'wpdocs_my_search_form' );
@@ -364,7 +364,7 @@ Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
       <ul class="collection rpwidget">
         <?php while( $r->have_posts() ) : $r->the_post(); ?>
         <li class="collection-item avatar">
-          <img src="/wp-content/uploads/files/GACR-CZ_RGB_SQUARE.png" class="alignleft circle" alt="GACR-CZ_RGB">
+          <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/library/images/GACR-CZ_RGB_SQUARE.png' ); ?>" class="alignleft circle" alt="GACR-CZ_RGB">
           <span class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></span>
           <p><?php the_time('j. n. Y'); ?></p>
         </li>
