@@ -15,7 +15,7 @@
 get_header(); ?>
 
 <div class="section">
-    <div class="row">
+    <!-- <div class="row"> -->
         <div class="col s12 m8 l9">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main" role="main">
@@ -37,7 +37,7 @@ get_header(); ?>
         <aside id="secondary" class="widget-area col s12 m4 l3" role="complementary">
             <?php dynamic_sidebar( 'page' ); ?>
         </aside><!-- #secondary -->
-    </div><!-- row -->
+    <!-- </div>row -->
 </div><!-- section -->
 
 
