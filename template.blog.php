@@ -24,7 +24,7 @@ get_header(); ?>
 									$args = array(
 									'post_type' => 'post',
 									'posts_per_page' => '5',
-									'cat' => '-4, -2',
+									'cat' => '-4, -2, -87',
 									'paged' => $paged );
 
 									query_posts($args);

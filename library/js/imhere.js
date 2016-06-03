@@ -83,9 +83,43 @@ $('#gacr').click(function(){
     Materialize.toast('I am a toast!', 3000, 'blue')
 });
 
+// fixed table on side
+// $('#text-38').pushpin({ top: 0, bottom: 500 });
+
+$('#text-38').pushpin({
+  bottom: $('#primary').offset()
+});
 
 
+  /* Toggle grid button
+     ==========================================================================
+    dont forget to add to button href="javascript:void(0)"
+     */
 
+  /*
+  // 1. THE JQUERY WAY
+  var flip = 0;
+  $('#btnToggleGrid').on('click', function(){
+    // Get line-height
+    var vcLineHeight = parseInt($('p').css('line-height'));
+    console.log(vcLineHeight);
+    if(flip == 0){
+      $('body').addClass('grid');
+      // $('.verticalGrid').css('background', vcImg);
+      flip = 1;
+    } else if (flip == 1) {
+      $('body').addClass('grid-double');
+      flip = 2;
+    } else if (flip == 2) {
+      $('body').removeClass('grid-double');
+      $('body').removeClass('grid');
+      // $('.verticalGrid').css('background', 'none');
+      flip = 0;
+    };
+  });
+
+  ----
+  */
 
 console.log('I SEE YOU');
 

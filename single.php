@@ -12,7 +12,7 @@
                                     <header class="entry-header">
                                         <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
                                     </header><!-- .entry-header -->
-                                    <span class="entry-meta grey-text text-darken-2 hide">Zveřejněno: <?php the_time('j. n. Y'); ?></span>
+                                    <span class="entry-meta grey-text text-darken-2 hide hide">Zveřejněno: <?php the_time('j. n. Y'); ?></span>
                                 </span>
                             </div>
                             <div class="card-content">
@@ -22,7 +22,7 @@
                                     <header class="entry-header">
                                         <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
                                     </header><!-- .entry-header -->
-                                    <span class="entry-meta grey-text text-darken-2">Zveřejněno: <?php the_time('j. n. Y'); ?></span>
+                                    <span class="entry-meta grey-text text-darken-2 hide">Zveřejněno: <?php the_time('j. n. Y'); ?></span>
                                 </span>
                         <?php } ?>
                             <div class="entry-content">
@@ -45,7 +45,8 @@
                             <?php if(of_get_option('sc_authorbox') == '1') : ?>
                             <div class="author clearfix">
                                 <div class="author-gravatar">
-                                    <img src="/wp-content/uploads/files/GACR-CZ_RGB_SQUARE.png" alt="">
+                                    <!-- <img src="/wp-content/uploads/files/GACR-CZ_RGB_SQUARE.png" alt=""> -->
+                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/library/images/GACR-CZ_RGB_SQUARE.png' ); ?>" />
                                 </div>
                                 <div class="author-about">
                                     <h4>
