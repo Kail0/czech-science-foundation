@@ -167,7 +167,7 @@ function gacr_scripts() {
 
 	}
     // default material library
-	wp_enqueue_style( 'material-style', get_template_directory_uri() . '/css/materialize.css', array(), '0.2' );
+	wp_enqueue_style( 'material-style', get_template_directory_uri() . '/css/materialize.css', array(),  null );
 
     // our own style
 	wp_enqueue_style( 'gacr-style', get_stylesheet_uri() , array(), '0.2' );
