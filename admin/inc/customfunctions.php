@@ -402,7 +402,7 @@ JQUERY
 *********************************************************************************************/
 function register_jquery() {
     wp_deregister_script('jquery');
-    wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array(), '2.2', false );
+    wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), '2.2', false );
     wp_enqueue_script('jquery');
 }
 add_action('wp_enqueue_scripts', 'register_jquery');
