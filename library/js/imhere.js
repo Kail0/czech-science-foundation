@@ -31,7 +31,6 @@ Modernizr.load([
         });
 
 // Plugin initialization
-    $('.scrollspy').scrollSpy();
     $('.modal-predsednictvo').leanModal();
     $('.materialboxed').materialbox();
     $('.button-collapse').sideNav({
@@ -83,12 +82,6 @@ $('#gacr').click(function(){
     Materialize.toast('I am a toast!', 3000, 'blue')
 });
 
-// fixed table on side
-// $('#text-38').pushpin({ top: 0, bottom: 500 });
-
-$('#text-38').pushpin({
-  bottom: $('#primary').offset()
-});
 
 
   /* Toggle grid button
@@ -121,7 +114,12 @@ $('#text-38').pushpin({
   ----
   */
 
-console.log('I SEE YOU');
+console.log('GACR');
+
+
+// add class
+
+
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
