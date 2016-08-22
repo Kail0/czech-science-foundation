@@ -969,9 +969,9 @@ header .row {
 ul.list-disc, ul.list-square, ul.list-disc, ul.list-margin { margin: 0 0 1.5em 35px; }
 ol.list-upper-roman, ol.list-lower-roman, ol.list-upper-alpha, ol.list-lower-alpha { margin: 0 0 1.5em 35px; }
 ol { list-style-type: decimal; }
-ul ul li, ol ul li { list-style-type: disc; }
+ul ul.list-disc li, ol ul.list-disc li { list-style-type: disc; }
 
-ul.list-disc li { list-style-type: disc; }
+/*ul.list-disc li { list-style-type: disc; }*/
 ul.list-square li { list-style: square; margin: 0 0 6px;}
 ul.list-disc li { list-style-type: disc; margin: 0 0 6px;}
 ul.list-margin li { list-style: none; margin: 0 0 6px;}
@@ -1557,7 +1557,7 @@ ul.faq-list {
     font-size: 1.2rem;
 }
 
-ul.faq-list li {
+ul.faq-list-icon li {
     border-bottom: 1px solid #e0e0e0;
     padding: 5px 0;
 }
