@@ -18,7 +18,8 @@
 		<meta name="description" content="<?php echo of_get_option('sc_metadescription')  ?>">
 		<meta name="keywords" content="<?php wp_title(); ?>, <?php echo of_get_option('sc_metakeywords')  ?>" />
 		<meta name="revisit-after" content="<?php echo of_get_option('sc_revisitafter')  ?> days" />
-		<meta name="author" content="www.kailo.photography">
+		<meta name="author" content="https://kailo.io">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 		<?php } ?>
 
@@ -100,17 +101,11 @@
 										echo of_get_option('sc_clogo_text');
 										} else {
 										bloginfo( 'name' );
-									}
-									?>
+									} ?>
 								</a></h1>
 								<h5 id="tagline"><?php bloginfo('description'); ?></h5>
 							</hgroup>
 							<?php }?>
-
-						<!-- END LOGO -->
-						<!-- <div class="col l4">
-							<div id="motto"><h5>... od zvídavosti k poznání</h5></div>
-						</div> -->
 
 					</div><!-- START TOP MENU -->
 					<div class="col l6">
