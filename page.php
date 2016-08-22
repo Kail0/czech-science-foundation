@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<div id="primary" class="container clearfix">
+	<div id="primary" class="container clearfix default">
 		<!-- content -->
 			<div class="section">
 			 	<div class="row">
