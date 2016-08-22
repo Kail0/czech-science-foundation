@@ -162,7 +162,7 @@ function gacr_scripts() {
 
         //register new jQuery
 		wp_deregister_script('jquery');
-		wp_register_script( 'material-jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array(), '2.2', 'in_footer' );
+		wp_register_script( 'material-jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), '2.2', 'in_footer' );
 		wp_enqueue_script( 'material-jquery' );
 
 	}
