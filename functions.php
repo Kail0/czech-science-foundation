@@ -167,7 +167,7 @@ function gacr_scripts() {
 
 	}
     // default material library
-	wp_enqueue_style( 'material-style', get_template_directory_uri() . '/css/materialize.css', array(),  null );
+	wp_enqueue_style( 'material-style', get_template_directory_uri() . '/css/materialize.css', array(),  '0.97.7' );
 
     // our own style
 	wp_enqueue_style( 'gacr-style', get_stylesheet_uri() , array(), '0.2' );
@@ -183,7 +183,7 @@ function gacr_scripts() {
 	wp_enqueue_style('roboto', '//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700&subset=latin,latin-ext', array(), '0.1' );
 
     //material JS library
-	wp_enqueue_script('material-script', get_template_directory_uri().'/js/materialize.js', array(), '1.0', 'in_footer' );
+	wp_enqueue_script('material-script', get_template_directory_uri().'/js/materialize.js', array(), '0.97.7', 'in_footer' );
 
     //our own JS library
 	wp_enqueue_script('imhere', get_template_directory_uri().'/js/imhere.js', array(), '1.0', 'in_footer' );
