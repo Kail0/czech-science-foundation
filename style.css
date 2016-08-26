@@ -1682,3 +1682,6 @@ h2.tablepress-table-name {
 .dropdown-content{
     overflow: visible !important;
 }
+.dropdown-content.menu-depth-1 {
+    width:250px !important;
+}
