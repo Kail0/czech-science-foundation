@@ -67,7 +67,8 @@ class Materialize_CSS_Menu_Walker extends Walker {
     $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
     $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
     $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-    $attributes .= ! empty( $children )         ? ' class="dropdown-button" data-activates="dropdown-'. $item->ID .'"' : '';
+    $attributes .= ! empty( $children )         ? ' data-activates="dropdown-'. $item->ID .'"' : '';
+    $attributes .= ! empty( $children )         ? ' class="dropdown-button '. $depth_class_names .'"' : '';
 
     $item_output .= '<a'. $attributes .'>';
     $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
