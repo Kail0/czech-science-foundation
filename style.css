@@ -48,7 +48,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-html {
+/*html {
 	font-family: 'Roboto',sans-serif;
 }
 body {
@@ -259,7 +259,7 @@ table {
 td,
 th {
 	padding: 0;
-}
+}*/
 
 /*--------------------------------------------------------------
 # Typography
@@ -275,7 +275,7 @@ textarea {
 	font-size: 1rem;
 	line-height: 1.5;
 }*/
-
+/*
 h1,
 h2,
 h3,
@@ -347,7 +347,7 @@ big {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-}
+}*/
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -461,7 +461,7 @@ ul.circle-list li { list-style-type: circle; }
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-button,
+/*button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -514,9 +514,9 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	/* color: #666; */
-	/* border: 1px solid #ccc; */
-	/* border-radius: 3px; */
+	 color: #666;
+	 border: 1px solid #ccc;
+	 border-radius: 3px;
 }
 
 select {
@@ -564,14 +564,14 @@ textarea {
 	padding-left: 3px;
 	width: 100%;
 }
-
+*/
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-a {
+/*a {
 	color: royalblue;
 }
 
@@ -593,7 +593,7 @@ a:hover,
 a:active {
 	outline: 0;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -767,7 +767,7 @@ color: #fff;
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
-.alignleft {
+/*.alignleft {
 	display: inline;
 	float: left;
 	margin-right: 1.5em;
@@ -785,7 +785,7 @@ color: #fff;
 	margin-left: auto;
 	margin-right: auto;
 }
-
+*/
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
@@ -1676,3 +1676,9 @@ h2.tablepress-table-name {
     }
 }
 
+*/
+
+/*TWEAKS*/
+.dropdown-content{
+    overflow: visible !important;
+}
