@@ -15,14 +15,14 @@ Please, keep in mind, that this theme has government based principles and there 
 - Support of FAQ
 
 ##Installation
-- upload theme to your WP content directory via FTP or Appareance bar
+- upload theme to your WP content directory
 
 ##Notes
 
 ##Credits
 - Wordpress team (core)
 - Underscore (blank theme)
-- Materialize (framwework)
+- Materializecss (framwework)
 - Animate.css (animation)
 
 ##Screenshots
@@ -30,17 +30,6 @@ Please, keep in mind, that this theme has government based principles and there 
 
 ##Changelog
 All notable changes to this project will be documented in this file
-
-## [1.0.1] - 2016-09-12
-### Added
-- ...
-
-### Changed
-- Updated Materialize (v0.97.7)
-- Updated README
-
-### Fixed
-- ...
 
 ## [1.0.0] - 2016-08-20
 ### Added
