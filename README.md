@@ -32,7 +32,7 @@ Please, keep in mind, that this theme has government based principles and there 
 All notable changes to this project will be documented in this file
 
 
-## [1.0.1] - 2016-09-12
+## [1.0.2] - 2016-09-12
 ### Changed
 - Updated README
 - merged
