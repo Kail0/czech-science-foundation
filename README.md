@@ -15,14 +15,14 @@ Please, keep in mind, that this theme has government based principles and there 
 - Support of FAQ
 
 ##Installation
-- upload theme to your WP content directory
+- upload theme to your WP content directory via FTP or Appareance bar
 
 ##Notes
 
 ##Credits
 - Wordpress team (core)
 - Underscore (blank theme)
-- Materializecss (framwework)
+- Materialize (framwework)
 - Animate.css (animation)
 
 ##Screenshots
