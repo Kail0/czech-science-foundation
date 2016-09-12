@@ -31,16 +31,17 @@ Please, keep in mind, that this theme has government based principles and there 
 ##Changelog
 All notable changes to this project will be documented in this file
 
-## [1.0.1] - 2016-09-12
-### Added
-- ...
 
+## [1.0.1] - 2016-09-12
+### Changed
+- Updated README
+- merged
+
+## [1.0.1] - 2016-09-1
 ### Changed
 - Updated Materialize (v0.97.7)
 - Updated README
 
-### Fixed
-- ...
 
 ## [1.0.0] - 2016-08-20
 ### Added
