@@ -15,8 +15,8 @@
 
 // main dropdown initialization
 $('.dropdown-button.main-menu-item').dropdown({
-    inDuration: 300,
-    outDuration: 225,
+    inDuration: 400,
+    outDuration: 245,
     constrain_width: true, // Does change width of dropdown to that of the activator
     hover: true, // Activate on hover
     belowOrigin: true, // Displays dropdown below the button
@@ -24,8 +24,8 @@ $('.dropdown-button.main-menu-item').dropdown({
 });
 // nested dropdown initialization
 $('.dropdown-button.sub-menu-item').dropdown({
-    inDuration: 300,
-    outDuration: 225,
+    inDuration: 400,
+    outDuration: 245,
     constrain_width: false, // Does not change width of dropdown to that of the activator
     hover: true, // Activate on hover
     gutter: ($('.dropdown-content').width() * 3) / 3.05 + 3, // Spacing from edge
@@ -33,19 +33,17 @@ $('.dropdown-button.sub-menu-item').dropdown({
     alignment: 'left' // Displays dropdown with edge aligned to the left of button
 });
 
+//  // MD loding transition
+$('[data-animation="animate"]').onScreen({
+    doIn: function() {
+        $(this).addClass('slideInUp animated')
+    },
+    tolerance: 0,
+    throttle: 0,
+    toggleClass: ''
+});
 
-
-        //  // MD loding transition
-        $('[data-animation="animate"]').onScreen({
-            doIn: function() {
-                $(this).addClass('slideInUp animated')
-            },
-            tolerance: 0,
-            throttle: 0,
-            toggleClass: ''
-        });
-
-// Add ID to ...
+// Add ID on click to ...
 // $('.button-collapse').on('click', function() {
 //     $(".side-nav, .drag-target").attr('id','staggered-test').addClass('class1 class2');
 // });
