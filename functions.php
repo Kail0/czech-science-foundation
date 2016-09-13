@@ -47,8 +47,8 @@ function gacr_setup() {
 /*-----------------------------------------------------------------------------------*/
 register_nav_menus(
     array(
-        'primary'   =>  __( 'Primary Menu', 'gacr' ),
-        'drawer'   =>  __( 'Drawer Menu', 'gacr' ),
+        'Primary'   =>  __( 'Primary Menu', 'gacr' ),
+        'Drawer'   =>  __( 'Side Menu', 'gacr' ),
         // Register the Primary menu and Drawer menu
         // Theme uses wp_nav_menu() in TWO locations.
         // Copy and paste the line above right here if you want to make another menu,
@@ -203,18 +203,18 @@ function gacr_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gacr_scripts' );
 
-/*-----------------------------------------------------------------------------------*/
-/* Post & Page Thumbnails Support
-/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------
+    Post & Page Thumbnails Support
+-----------------------------------------------------------------------------------*/
 add_theme_support( 'post-thumbnails' );
   // add_image_size( 'page-width', 800, 500, true );
   add_image_size( 'square', 500, 500, true );
   add_image_size( 'card-header', 892, 250, true ); // Page Header
 
 
-/*-----------------------------------------------------------------------------------*/
-/* Hook Image size option into Media Library
-/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------
+    Hook Image size option into Media Library
+-----------------------------------------------------------------------------------*/
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 
 function my_custom_sizes( $sizes ) {
@@ -225,9 +225,9 @@ function my_custom_sizes( $sizes ) {
 }
 
 
-/*-----------------------------------------------------------------------------------*/
-/* Delete paragraphs on WP page and keep it in WP post page
-/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------
+    Delete paragraphs on WP page and keep it in WP post page
+-----------------------------------------------------------------------------------*/
 function remove_p_on_pages() {
     if ( is_page() ) {
         remove_filter( 'the_content', 'wpautop' );
@@ -236,9 +236,9 @@ function remove_p_on_pages() {
 }
 add_action( 'wp_head', 'remove_p_on_pages' );
 
-/*-----------------------------------------------------------------------------------*/
-/* MD query for Recent Posts on Homepage
-/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------
+    MD query for Recent Posts on Homepage
+-----------------------------------------------------------------------------------*/
 Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
 
   function widget($args, $instance) {
@@ -285,46 +285,83 @@ function my_recent_widget_registration() {
 }
 add_action('widgets_init', 'my_recent_widget_registration');
 
-/*-----------------------------------------------------------------------------------*/
-/* Register MD pagination - WIP
-/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------
+    Register MD pagination - WIP
+-----------------------------------------------------------------------------------*/
 // require get_template_directory() . '/inc/wp_md_pagination.php';
 
+/*-----------------------------------------------------------------------------------
+    Register Material menu
+-----------------------------------------------------------------------------------*/
+ require_once get_template_directory() . '/inc/wp_materialize_navwalker.php';
 
-/*-----------------------------------------------------------------------------------*/
-/* Register mega Menu - I'll propably use plugin based solutions since I suck at Walker's function
-/*-----------------------------------------------------------------------------------*/
- require get_template_directory() . '/inc/mega_menu.php';
+/*-----------------------------------------------------------------------------------
+    INCLUDE ACF plugin (free) into theme
+-----------------------------------------------------------------------------------*/
+// 1. customize ACF path
+add_filter('acf/settings/path', 'my_acf_settings_path');
 
+function my_acf_settings_path( $path ) {
 
+    // update path
+    $path = get_stylesheet_directory() . '/inc/acf/';
 
-/**
- * Implement the Custom Header feature.
- */
+    // return
+    return $path;
+
+}
+// 2. customize ACF dir
+add_filter('acf/settings/dir', 'my_acf_settings_dir');
+
+function my_acf_settings_dir( $dir ) {
+
+    // update path
+    $dir = get_stylesheet_directory_uri() . '/inc/acf/';
+
+    // return
+    return $dir;
+}
+// 3. Hide ACF field group menu item
+// add_filter('acf/settings/show_admin', '__return_false');
+
+// 4. Include ACF
+include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
+
+/*-----------------------------------------------------------------------------------
+    Implement the Custom Header feature.
+----------------------------------------------------------------------------------- */
 require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
+/*-----------------------------------------------------------------------------------
+    Custom template tags for this theme.
+----------------------------------------------------------------------------------- */
 require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Custom functions that act independently of the theme templates.
- */
+/*-----------------------------------------------------------------------------------
+    Custom functions that act independently of the theme templates.
+ ----------------------------------------------------------------------------------- */
 require get_template_directory() . '/inc/extras.php';
 
-/**
- * Customizer additions.
- */
+/*-----------------------------------------------------------------------------------
+    Customizer additions.
+ ----------------------------------------------------------------------------------- */
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
+/*-----------------------------------------------------------------------------------
+    Load Jetpack compatibility file.
+ ----------------------------------------------------------------------------------- */
 require get_template_directory() . '/inc/jetpack.php';
 
-
-/**** **/
+/*-----------------------------------------------------------------------------------
+    Disable style for TablePress (we are doing our own styling)
+ ----------------------------------------------------------------------------------- */
 add_filter( 'tablepress_use_default_css', '__return_false' );
+
+
+
+
+
+
+
 
 ?>
