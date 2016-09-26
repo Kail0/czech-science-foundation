@@ -24,30 +24,34 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'gacr' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="container z-depth-1">
-			<div class="site-branding">
-				<?php
-				if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ), 'gacr' ) ; ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/GACR-CZ_logo.png' ); ?>" alt="<?php echo bloginfo( 'name' ) ?>" />
-						</a>
-					</h1>
-				<?php else : ?>
-					<p class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ), 'gacr' ) ; ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/GACR-CZ_logo.png' ); ?>" alt="<?php echo bloginfo( 'name' ) ?>" />
-						</a>
-					</p>
-				<?php
-				endif;
+		<div class="container z-depth-1 white">
+			<div class="row">
+				<div class="col l12">
+					<div class="site-branding">
+						<?php
+						if ( is_front_page() && is_home() ) : ?>
+							<h1 class="logo">
+								<a href="<?php echo esc_url( home_url( '/' ), 'gacr' ) ; ?>" id="logo-container" class="brand-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+									<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/GACR-CZ_logo.png' ); ?>" alt="<?php echo bloginfo( 'name' ) ?>" />
+								</a>
+							</h1>
+						<?php else : ?>
+							<p class="logo">
+								<a href="<?php echo esc_url( home_url( '/' ), 'gacr' ) ; ?>" id="logo-container" class="brand-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+									<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/GACR-CZ_logo.png' ); ?>" alt="<?php echo bloginfo( 'name' ) ?>" />
+								</a>
+							</p>
+						<?php
+						endif;
 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-				endif; ?>
-			</div><!-- .site-branding -->
+						$description = get_bloginfo( 'description', 'display' );
+						if ( $description || is_customize_preview() ) : ?>
+							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+						<?php
+						endif; ?>
+					</div><!-- .site-branding -->
+				</div>
+			</div>
 
 			<div class="m-container nav">
 				<nav id="site-navigation" class="placeholder" role="navigation">

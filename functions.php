@@ -224,7 +224,6 @@ function my_custom_sizes( $sizes ) {
     ) );
 }
 
-
 /*-----------------------------------------------------------------------------------
     Delete paragraphs on WP page and keep it in WP post page
 -----------------------------------------------------------------------------------*/
@@ -237,7 +236,22 @@ function remove_p_on_pages() {
 add_action( 'wp_head', 'remove_p_on_pages' );
 
 /*-----------------------------------------------------------------------------------
-    MD query for Recent Posts on Homepage
+ *  IE Fallbacks
+-----------------------------------------------------------------------------------*/
+
+function load_IE_fallback() {
+    wp_register_script( 'ie_html5shiv', get_bloginfo('stylesheet_url'). '/js/html5shiv.min.js', array(), '3.7.2' );
+    wp_enqueue_script( 'ie_html5shiv');
+    wp_script_add_data( 'ie_html5shiv', 'conditional', 'lt IE 9' );
+
+    wp_register_script( 'ie_respond', get_bloginfo('stylesheet_url'). '/js/respond.min.js', array(), '1.4.2' );
+    wp_enqueue_script( 'ie_respond');
+    wp_script_add_data( 'ie_respond', 'conditional', 'lt IE 9' );
+}
+add_action( 'wp_enqueue_scripts', 'load_IE_fallback' );
+
+/*-----------------------------------------------------------------------------------
+    Query for Recent Posts on Homepage
 -----------------------------------------------------------------------------------*/
 Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
 
@@ -250,19 +264,19 @@ Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
     if( empty( $instance['number'] ) || ! $number = absint( $instance['number'] ) )
       $number = 10;
 
-    $r = new WP_Query( apply_filters( 'widget_posts_args', array(
+    $mdrpw = new WP_Query( apply_filters( 'widget_posts_args', array(
                                                         'posts_per_page' => 5,      //how many posts per page
                                                         'no_found_rows' => true,
-                                                        'cat' => '3',               //what categories you want to show;'-' for exlude cat
+                                                        'cat' => '3',               //what categories you want to show;
                                                          'post_status' => 'publish',
                                                         'ignore_sticky_posts' => true
                                                         ) ) );
-    if( $r->have_posts() ) :
+    if( $mdrpw->have_posts() ) :
 
       echo $before_widget;
       if( $title ) echo $before_title . $title . $after_title; ?>
       <ul class="collection rpwidget">
-        <?php while( $r->have_posts() ) : $r->the_post(); ?>
+        <?php while( $mdrpw->have_posts() ) : $mdrpw->the_post(); ?>
         <li class="collection-item avatar">
           <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/GACR-CZ_square_50x50x.png' ); ?>" class="alignleft circle" alt="GACR-CZ_RGB">
           <span class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></span>
