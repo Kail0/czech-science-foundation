@@ -23,9 +23,9 @@ Please, keep in mind, that this theme has government based principles and there 
 ##Credits
 - Wordpress team (core)
 - Underscore (blank theme)
-- Materialize (framwework)
-- Animate.css (animation)
-- ACF (custom fields)
+- Materialize (framewework)
+- Animate.css (animations)
+- ACF (custom meta fields)
 
 ##Screenshots
 - later
