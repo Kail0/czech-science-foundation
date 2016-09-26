@@ -11,7 +11,6 @@ Please, keep in mind, that this theme has government based principles and there 
 - a fucking lot
 
 ##Features
-- Uredni deska
 - FAQ
 - Ticker
 
