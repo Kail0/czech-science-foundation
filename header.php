@@ -31,7 +31,7 @@
 						<?php
 						if ( is_front_page() && is_home() ) : ?>
 							<h1 class="logo">
-								<a href="<?php echo esc_url( home_url( '/' ), 'gacr' ) ; ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+								<a href="<?php echo esc_url( home_url( '/' ), 'gacr' ) ; ?>" id="logo-container" class="brand-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 									<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/GACR-CZ_logo.png' ); ?>" alt="<?php echo bloginfo( 'name' ) ?>" />
 								</a>
 							</h1>
