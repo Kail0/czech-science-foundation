@@ -19,10 +19,11 @@ Please, keep in mind, that this theme has government based principles and there 
 
 ##Notes
 
+
 ##Credits
-- Wordpress team (core)
+- Wordpress team (core CMS)
 - Underscore (blank theme)
-- Materialize (framewework)
+- Materialize (framework)
 - Animate.css (animations)
 - ACF (custom meta fields)
 
@@ -30,7 +31,7 @@ Please, keep in mind, that this theme has government based principles and there 
 - later
 
 ##Changelog
-All notable changes to this project will be documented in this file
+All notable changes to this project will be documented in this file - I'm kidding..
 
 ## [1.0.3] - 2016-09-13
 ### Added
