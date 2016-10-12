@@ -179,8 +179,11 @@ function gacr_scripts() {
     // material icons
 	wp_enqueue_style('material-icons', '//fonts.googleapis.com/icon?family=Material+Icons', array(), '0.2' );
 
+    //load Roboto via Google's servers because Roboto is dickbutt with font-face
+	wp_enqueue_style('Roboto', '//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700&subset=latin,latin-ext', array(), '0.1' );
+
     //load Roboto via Google's servers because Roboto is dickbutt which has glitches on different browsers
-	wp_enqueue_style('roboto', '//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700&subset=latin,latin-ext', array(), '0.1' );
+    wp_enqueue_style('Open Sans', '//fonts.googleapis.com/css?family=Open+Sans:400,400i,700&subset=cyrillic-ext', array(), '0.1' );
 
     //material JS library
 	wp_enqueue_script('material-script', get_template_directory_uri().'/js/materialize.js', array(), '0.97.7', 'in_footer' );

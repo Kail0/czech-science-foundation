@@ -49,7 +49,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Normalize
 --------------------------------------------------------------*/
 html {
-	font-family: 'Roboto',sans-serif;
+	font-family: 'Arial', sans-serif;
 }
 body {
 	margin: 0;
@@ -264,18 +264,18 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-/*body,
+body,
 button,
 input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
-}*/
-/*
+}
+
 h1,
 h2,
 h3,
@@ -283,6 +283,7 @@ h4,
 h5,
 h6 {
 	clear: both;
+    font-family: 'Roboto', sans-serif;
 }
 
 p {
@@ -347,7 +348,7 @@ big {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-}*/
+}
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
