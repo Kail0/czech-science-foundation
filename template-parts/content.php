@@ -9,14 +9,16 @@
 
 ?>
 <!-- If is post page single, show pictures of header, if not, show regular card with not images -->
-<?php if ( !is_single() && is_front_page() && !wp_is_mobile() ) : ?>
+<?php if ( !is_single() && is_front_page() && !wp_is_mobile() ) :
+// Do we have any posts in the database that match our query? Query = not single post, its on front page and its not mobile
+?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="card">
                 <div class="card-content">
                     <span class="card-title">
                             <header class="entry-header">
                                 <?php
-                                    //if is single post add H1, otherwise add H2
+                                    //// Display the title of the post, if its single post add H1, otherwise add H2
                                     if ( is_single() ) {
                                         the_title( '<h1 class="entry-title">', '</h1>' );
                                     } else {
@@ -25,7 +27,7 @@
 
                                 if ( 'post' === get_post_type() ) : ?>
                                 <div class="entry-meta">
-                                    <?php gacr_posted_on(); ?>
+                                    <?php gacr_posted_on(); // Display the time it was published. You can also use php the_time('d.m.Y') ?>
                                 </div><!-- .entry-meta -->
                                 <?php
                                 endif; ?>
@@ -74,7 +76,7 @@
 
                         if ( 'post' === get_post_type() ) : ?>
                         <div class="entry-meta">
-                            <?php gacr_posted_on(); ?>
+                            <?php gacr_posted_on(); // Display the time it was published. You can also use php the_time('d.m.Y') ?>
                         </div><!-- .entry-meta -->
                         <?php
                         endif; ?>
