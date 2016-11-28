@@ -167,7 +167,7 @@ function gacr_scripts() {
 
 	}
     // default material library
-	wp_enqueue_style( 'material-style', get_template_directory_uri() . '/css/materialize.css', array(),  '0.97.7' );
+	wp_enqueue_style( 'material-style', get_template_directory_uri() . '/css/materialize.css', array(),  '0.97.8' );
 
     // our own style
 	wp_enqueue_style( 'gacr-style', get_stylesheet_uri() , array(), '0.2' );
@@ -186,13 +186,13 @@ function gacr_scripts() {
     wp_enqueue_style('Open Sans', '//fonts.googleapis.com/css?family=Open+Sans:400,400i,700&subset=cyrillic-ext', array(), '0.1' );
 
     //material JS library
-	wp_enqueue_script('material-script', get_template_directory_uri().'/js/materialize.js', array(), '0.97.7', 'in_footer' );
+	wp_enqueue_script('material-script', get_template_directory_uri().'/js/materialize.js', array(), '0.97.8', 'in_footer' );
 
     //our own JS library
 	wp_enqueue_script('imhere', get_template_directory_uri().'/js/imhere.js', array(), '1.0', 'in_footer' );
 
     //standlone library for my ticker
-	wp_enqueue_script('kailo_ticker', get_template_directory_uri().'/js/kailo.jquery.ticker.js', array(), '1.0', 'in_footer' );
+	wp_enqueue_script('kailo_ticker', get_template_directory_uri().'/js/kailo.jquery.ticker.js', array(), '1.1', 'in_footer' );
 
     //MD loding transition
     wp_enqueue_script('MD-anime-js', get_template_directory_uri().'/js/jquery.md-transition.min.js', array(), '1.0', 'in_footer' );
