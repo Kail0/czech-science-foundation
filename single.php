@@ -7,13 +7,14 @@
  * @package gacr
  */
 
-get_header(); ?>
+get_header(); // This fxn gets the header.php file and renders it ?>
 
 	<div id="primary" class="content-area col s12 m8 l9">
 		<main id="main" class="site-main" role="main">
 
 		<?php
 		while ( have_posts() ) : the_post();
+		// If we have a post to show, start a loop that will display it
 
 			get_template_part( 'template-parts/content', get_post_format() );
 
