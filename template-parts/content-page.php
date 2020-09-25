@@ -1,75 +1,79 @@
 <?php
 /**
- * Template part for displaying page content in page.php.
+ * Template part for displaying page content in page.php
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package gacr
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="card dismissable">
-        <?php if (has_post_thumbnail()) { ?>
-        <div class="card-image">
-            <?php the_post_thumbnail('card-header');?>
-            <span class="card-title">
-                    <header class="entry-header CONTENT">
-                        <?php
-                            if ( is_single() ) {
-                                the_title( '<h1 class="entry-title">', '</h1>' );
-                            } else {
-                                the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-                            }
+<?php
+if ( is_singular() ) :
+    the_title( '<h1 class="entry-title">', '</h1>' );
+else :
+    the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+endif;
+?>
 
-                        if ( 'post' === get_post_type() ) : ?>
-                        <div class="entry-meta">
-                            <?php gacr_posted_on(); ?>
-                        </div><!-- .entry-meta -->
-                        <?php
-                        endif; ?>
-                    </header><!-- .entry-header -->
-                </span>
-        </div>
-        <div class="card-content">
-            <?php } else { ?>
-            <div class="card-content">
-                <span class="card-title">
-                        <header class="entry-header">
-                            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-                        </header><!-- .entry-header -->
-                </span>
-                <?php } ?>
-                <div class="entry-content">
-                    <?php
-            the_content();
+<article <?php post_class('article'); ?>id="post-<?php the_ID(); ?>">
+    <!--<div class="articleInner">-->
 
-            wp_link_pages( array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gacr' ),
-                'after'  => '</div>',
-            ) ); ?>
-                </div>
-                <!-- .entry-content -->
-                <!-- .entry-content -->
+
+        <?php
+        /*if ( 'post' === get_post_type() || 'page' === get_post_type()) :
+            ?>
+            <div class="entry-meta">
+                <?php
+                gacr_posted_on_edited();
+                ?>
+            </div><!-- .entry-meta -->
+        <?php endif; ?>
+        <div class="btnFullWidth -textCenter">
+            <div class="articleSocial">
+                <a href="" class="iconSocial iconFacebook"></a>
+                <a href="" class="iconSocial iconLinkedIn"></a>
+                <a href="" class="iconSocial iconTwitter"></a>
+                <a href="" class="iconSocial iconGoogle"></a>
             </div>
-            <!-- card content -->
-            <div class="card-action">
-                <footer class="entry-footer">
-                    <?php
-                        edit_post_link(
-                            sprintf(
-                                /* translators: %s: Name of current post */
-                                esc_html__( 'Edit %s', 'gacr' ),
-                                the_title( '<span class="screen-reader-text">"', '"</span>', false )
-                            ),
-                            '<span class="edit-link">',
-                            '</span>'
-                        );
-                    ?>
-                </footer><!-- .entry-footer -->
-                <!-- .entry-footer -->
+        </div>*/
+?>
+        <?php gacr_post_thumbnail(); ?>
+        <!-- MAIN CONTENT -->
+        <?php
+        the_content( sprintf(
+            wp_kses(
+            /* translators: %s: Name of current post. Only visible to screen readers */
+                __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gacr' ),
+                array(
+                    'span' => array(
+                        'class' => array(),
+                    ),
+                )
+            ),
+            get_the_title()
+        ) );
+
+        wp_link_pages( array(
+            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gacr' ),
+            'after'  => '</div>',
+        ) );
+        ?>
+    <!--</div>-->
+
+    <?php if ( 'post' === get_post_type()) : ?>
+    <div class="articleFooter">
+        <span class="articleAuthor">Autor: <?php gacr_posted_by_edited() ?></span>
+        <!--<div class="btnFullWidth -textCenter">
+            <div class="articleSocial">
+                <a href="" class="iconSocial iconFacebook"></a>
+                <a href="" class="iconSocial iconLinkedIn"></a>
+                <a href="" class="iconSocial iconTwitter"></a>
+                <a href="" class="iconSocial iconGoogle"></a>
             </div>
-        </div>
-        <!--  card -->
+        </div>-->
+    </div>
+    <?php endif; ?>
 </article>
+
