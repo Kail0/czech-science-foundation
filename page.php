@@ -1,45 +1,39 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
  * different template.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package gacr
  */
 
-get_header(); ?>
+get_header();
+?>
+    <section style="padding-bottom: 0;">
+    <div class="content">
 
-<div class="section">
-    <!-- <div class="row"> -->
-        <div class="col s12 m8 l9">
-            <div id="primary" class="content-area">
-                <main id="main" class="site-main" role="main">
-                    <?php
-                        while ( have_posts() ) : the_post();
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-                            get_template_part( 'template-parts/content', 'page' );
+			get_template_part( 'template-parts/content', 'page' );
 
-                            // If comments are open or we have at least one comment, load up the comment template.
-                            if ( comments_open() || get_comments_number() ) :
-                                comments_template();
-                            endif;
+			// If comments are open or we have at least one comment, load up the comment template.
+			/*if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;*/
 
-                        endwhile; // End of the loop.
-                        ?>
-                </main><!-- #main -->
-            </div><!-- #primary -->
-        </div><!-- col -->
-        <aside id="secondary" class="widget-area col s12 m4 l3" role="complementary">
-            <?php dynamic_sidebar( 'page' ); ?>
-        </aside><!-- #secondary -->
-    <!-- </div>row -->
-</div><!-- section -->
+		endwhile; // End of the loop.
+		?>
 
+    </div>
+    </section>
 
 <?php
+//get_sidebar();
 get_footer();

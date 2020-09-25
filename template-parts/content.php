@@ -1,230 +1,181 @@
 <?php
 /**
- * Template part for displaying posts.
+ * Template part for displaying posts
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package gacr
  */
 
 ?>
-<!-- If is post page single, show pictures of header, if not, show regular card with not images -->
-<?php if ( !is_single() && is_front_page() && !wp_is_mobile() ) :
-// Do we have any posts in the database that match our query? Query = not single post, its on front page and its not mobile
+
+<?php
+    if ( is_singular() ) :
+        the_title( '<h1 class="entry-title">', '</h1>' );
+    else :
+        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+    endif;
 ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title">
-                            <header class="entry-header">
-                                <?php
-                                    //// Display the title of the post, if its single post add H1, otherwise add H2
-                                    if ( is_single() ) {
-                                        the_title( '<h1 class="entry-title">', '</h1>' );
-                                    } else {
-                                        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-                                    }
 
-                                if ( 'post' === get_post_type() ) : ?>
-                                <div class="entry-meta">
-                                    <?php gacr_posted_on(); // Display the time it was published. You can also use php the_time('d.m.Y') ?>
-                                </div><!-- .entry-meta -->
-                                <?php
-                                endif; ?>
-                            </header><!-- .entry-header -->
-                        </span>
-                <div class="entry-content">
-                    <?php
-                        the_content( sprintf(
-                            /* translators: %s: Name of current post. */
-                            wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'gacr' ), array( 'span' => array( 'class' => array() ) ) ),
-                            the_title( '<span class="screen-reader-text">"', '"</span>', false )
-                        ) );
+<article <?php post_class('article'); ?>id="post-<?php the_ID(); ?>">
+    <!--<div class="articleInner">-->
+    <?php
 
-                        wp_link_pages( array(
-                            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gacr' ),
-                            'after'  => '</div>',
-                        ) );
-                    ?>
-                </div><!-- .entry-content -->
-                </div> <!-- card content -->
-                <div class="card-action">
-                    <footer class="entry-footer">
-                        <a href="<?php esc_url( the_permalink() ); ?>" class="white btn-floating waves-effect waves-circle z-depth-0">
-                            <?php printf( esc_html( '%s', 'gacr' ), '<i class="material-icons gacr-blue-text">&#xE5C8;</i>' ); ?>
-                        </a>
-                    </footer><!-- .entry-footer -->
-                </div>
-            </div><!-- card -->
-        </article><!-- #post-## -->
-
-<?php elseif ( is_single() ) : ?>
-
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <div class="card">
-        <?php if (has_post_thumbnail()) { ?>
-            <div class="card-image">
-                <?php the_post_thumbnail('card-header');?>
-                <span class="card-title">
-                    <header class="entry-header CONTENT">
-                        <?php
-                            if ( is_single() ) {
-                                the_title( '<h1 class="entry-title">', '</h1>' );
-                            } else {
-                                the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-                            }
-
-                        if ( 'post' === get_post_type() ) : ?>
-                        <div class="entry-meta">
-                            <?php gacr_posted_on(); // Display the time it was published. You can also use php the_time('d.m.Y') ?>
-                        </div><!-- .entry-meta -->
-                        <?php
-                        endif; ?>
-                    </header><!-- .entry-header -->
-                </span>
-            </div>
-        <div class="card-content">
-        <?php } else { ?>
-        <div class="card-content">
-            <span class="card-title">
-                    <header class="entry-header CONTENT">
-                        <?php
-                            if ( is_single() ) {
-                                the_title( '<h1 class="entry-title">', '</h1>' );
-                            } else {
-                                the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-                            }
-
-                        if ( 'post' === get_post_type() ) : ?>
-                        <div class="entry-meta">
-                            <?php gacr_posted_on(); ?>
-                        </div><!-- .entry-meta -->
-                        <?php
-                        endif; ?>
-                    </header><!-- .entry-header -->
-                </span>
-        <?php } ?>
-        <div class="entry-content">
+    if ( 'post' === get_post_type() ) :
+        ?>
+        <div class="entry-meta">
             <?php
-                the_content( sprintf(
-                    /* translators: %s: Name of current post. */
-                    wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'gacr' ), array( 'span' => array( 'class' => array() ) ) ),
-                    the_title( '<span class="screen-reader-text">"', '"</span>', false )
-                ) );
-
-                wp_link_pages( array(
-                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gacr' ),
-                    'after'  => '</div>',
-                ) );
+            gacr_posted_on_edited();
             ?>
-        </div><!-- .entry-content -->
-        </div> <!-- card content -->
-            <div class="card-action">
-                <footer class="entry-footer">
-                    <?php gacr_entry_footer(); ?>
-                </footer><!-- .entry-footer -->
+        </div><!-- .entry-meta -->
+    <?php endif; ?>
+        <div class="btnFullWidth -textCenter">
+            <div class="articleSocial">
+                <a href="//www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()) ?>" class="iconSocial iconFacebook"
+                   target="_blank" onclick="window.open(this.href,'','scrollbars=1,resizable=1,width=400,height=620');return false;"></a>
+
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink()) ?>"
+                   class="iconSocial iconLinkedIn"
+                   target="_blank"
+                   onclick="window.open(this.href,'','scrollbars=1,resizable=1,width=520,height=570');return false;"></a>
+
+                <a href="http://www.twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()) ?>&text=<?php echo urlencode(single_post_title()) ?>" class="iconSocial iconTwitter" target="_blank"
+                   onclick="window.open(this.href,'','scrollbars=1,resizable=1,width=400,height=620');return false;"></a>
+
+                <a href="//plus.google.com/share?url=<?php echo urlencode(get_permalink()) ?>" class="iconSocial iconGoogle" target="_blank"
+                   onclick="window.open(this.href,'','scrollbars=1,resizable=1,width=400,height=620');return false;"></a>
             </div>
-
-        </div><!--  card -->
-    </article><!-- #post-## -->
-
-<?php elseif ( is_front_page() && wp_is_mobile() ) : ?>
-
-<div data-animation="animate">
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title">
-                            <header class="entry-header CONTENT">
-                                <?php
-                                    //if is single post add H1, otherwise add H2
-                                    if ( is_single() ) {
-                                        the_title( '<h1 class="entry-title">', '</h1>' );
-                                    } else {
-                                        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-                                    }
-
-                                if ( 'post' === get_post_type() ) : ?>
-                                <div class="entry-meta">
-                                    <?php gacr_posted_on(); ?>
-                                </div><!-- .entry-meta -->
-                                <?php
-                                endif; ?>
-                            </header><!-- .entry-header -->
-                        </span>
-                <div class="entry-content">
-                    <?php
-                        the_content( sprintf(
-                            /* translators: %s: Name of current post. */
-                            wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'gacr' ), array( 'span' => array( 'class' => array() ) ) ),
-                            the_title( '<span class="screen-reader-text">"', '"</span>', false )
-                        ) );
-
-                        wp_link_pages( array(
-                            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gacr' ),
-                            'after'  => '</div>',
-                        ) );
-                    ?>
-                </div><!-- .entry-content -->
-                </div> <!-- card content -->
-                <div class="card-action">
-                    <footer class="entry-footer">
-                        <a href="<?php esc_url( the_permalink() ); ?>" class="white btn-floating waves-effect waves-circle z-depth-0">
-                            <?php printf( esc_html( '%s', 'gacr' ), '<i class="material-icons gacr-blue-text">&#xE5C8;</i>' ); ?>
-                        </a>
-                    </footer><!-- .entry-footer -->
-                </div>
-
-            </div><!-- card -->
-        </article><!-- #post-## -->
- </div>
-<?php else: ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title">
-                            <header class="entry-header">
-                                <?php
-                                    //if is single post add H1, otherwise add H2
-                                    if ( is_single() ) {
-                                        the_title( '<h1 class="entry-title">', '</h1>' );
-                                    } else {
-                                        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-                                    }
-
-                                if ( 'post' === get_post_type() ) : ?>
-                                <div class="entry-meta">
-                                    <?php gacr_posted_on(); ?>
-                                </div><!-- .entry-meta -->
-                                <?php
-                                endif; ?>
-                            </header><!-- .entry-header -->
-                        </span>
-                <div class="entry-content">
-                    <?php
-                        the_content( sprintf(
-                            /* translators: %s: Name of current post. */
-                            wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'gacr' ), array( 'span' => array( 'class' => array() ) ) ),
-                            the_title( '<span class="screen-reader-text">"', '"</span>', false )
-                        ) );
-
-                        wp_link_pages( array(
-                            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gacr' ),
-                            'after'  => '</div>',
-                        ) );
-                    ?>
-                </div><!-- .entry-content -->
-                </div> <!-- card content -->
-                <div class="card-action">
-                    <footer class="entry-footer">
-                        <a href="<?php esc_url( the_permalink() ); ?>" class="white btn-floating waves-effect waves-circle z-depth-0">
-                            <?php printf( esc_html( '%s', 'gacr' ), '<i class="material-icons gacr-blue-text">&#xE5C8;</i>' ); ?>
-                        </a>
-                    </footer><!-- .entry-footer -->
-                </div>
-            </div><!-- card -->
-        </article><!-- #post-## -->
+        </div>
 
 
+    <?php gacr_post_thumbnail(); ?>
+    <!-- MAIN CONTENT -->
+    <?php
+    the_content( sprintf(
+        wp_kses(
+        /* translators: %s: Name of current post. Only visible to screen readers */
+            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gacr' ),
+            array(
+                'span' => array(
+                    'class' => array(),
+                ),
+            )
+        ),
+        get_the_title()
+    ) );
+
+    wp_link_pages( array(
+        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gacr' ),
+        'after'  => '</div>',
+    ) );
+    ?>
+    <!--</div>-->
+
+    <div class="articleFooter">
+        <?php if ( 'post' === get_post_type() ) : ?> <span class="articleAuthor">Autor: <?php gacr_posted_by_edited() ?></span> <?php endif; ?>
+        <div class="btnFullWidth -textCenter">
+            <div class="articleSocial">
+                <a href="//www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()) ?>" class="iconSocial iconFacebook"
+                   target="_blank" onclick="window.open(this.href,'','scrollbars=1,resizable=1,width=400,height=620');return false;"></a>
+
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink()) ?>"
+                   class="iconSocial iconLinkedIn"
+                   target="_blank"
+                   onclick="window.open(this.href,'','scrollbars=1,resizable=1,width=520,height=570');return false;"></a>
+
+                <a href="http://www.twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()) ?>&text=<?php echo urlencode(single_post_title()) ?>" class="iconSocial iconTwitter" target="_blank"
+                   onclick="window.open(this.href,'','scrollbars=1,resizable=1,width=400,height=620');return false;"></a>
+
+                <a href="//plus.google.com/share?url=<?php echo urlencode(get_permalink()) ?>" class="iconSocial iconGoogle" target="_blank"
+                   onclick="window.open(this.href,'','scrollbars=1,resizable=1,width=400,height=620');return false;"></a>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<?php
+// the query
+/*$post_id = get_the_ID();
+$cat_ids = array();
+$categories = get_the_category( $post_id );
+
+
+if(!empty($categories) && is_wp_error($categories)):
+    foreach ($categories as $category):
+        array_push($cat_ids, $category->term_id);
+    endforeach;
+endif;
+
+
+$projekty = new WP_Query(array(
+    'category__in' => $cat_ids,
+    'post__not_in' => array($post_id),
+    'posts_per_page' => 3,
+));*/
+
+$projekty = new WP_Query(
+        array( 'category__in' => wp_get_post_categories($post->ID),
+            'posts_per_page' => 3,
+            'post__not_in' => array($post->ID) ) );
+
+
+
+?>
+
+<?php if ($projekty->have_posts()) : ?>
+</div>
+<section class="sectionProjects" style="padding-bottom: 100px;">
+    <div class="content -textCenter">
+            <h2><?php echo gacr_translate__('SOUVISEJÍCÍ ČLÁNKY'); ?></h2>
+
+        <div class="projectFlex">
+
+
+            <?php if ($projekty->have_posts()) : ?>
+                <?php while ($projekty->have_posts()) : $projekty->the_post(); ?>
+
+                    <a class="project" href="<?php the_permalink() ?>">
+
+                        <div class="row">
+                            <div class="projectHeader">
+                                <div class="projectBg" <?php if (has_post_thumbnail()) {
+                                    echo "style=\"background-image: url('", the_post_thumbnail_url(), "')\"";
+                                } else {
+                                    echo "";
+                                } ?>></div>
+                            </div>
+                            <div class="projectBody">
+                                <div class="projectText -small">
+                                    <p><?php the_title(); ?></p>
+                                </div>
+                                <div class="projectButton">
+                                    <span class="btn -white"><?php echo gacr_translate__('VÍCE INFORMACÍ'); ?></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+
+            <?php else : ?>
+                <p><?php __('No News'); ?></p>
+            <?php endif; ?>
+        </div>
+
+        <?php if (!empty($tlacitko_main)) : ?>
+            <a href="<?php echo $tlacitko_main; ?>" class="btn -bigMargin">ZOBRAZIT DALŠÍ PROJEKTY</a>
+        <?php endif; ?>
+
+    </div>
+
+</section>
 
 <?php endif; ?>
+
+
+
+
+		<?php /* gacr_entry_footer(); */ ?>
